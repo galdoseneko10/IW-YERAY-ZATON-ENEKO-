@@ -2,12 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee64fd3d-c227-4878-a0f1-bed9516c9473" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/appProject/template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/appProject/template/index.html" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -21,10 +32,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
+<<<<<<< Updated upstream
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="ee64fd3d-c227-4878-a0f1-bed9516c9473" name="Default Changelist" comment="" />
@@ -34,5 +47,16 @@
       <updated>1586191770481</updated>
     </task>
     <servers />
+=======
+  <component name="WindowStateProjectService">
+    <state x="275" y="22" key="#Notifications" timestamp="1586190304968">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="22" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1586190304968" />
+    <state x="184" y="6" key="SettingsEditor" timestamp="1586190299428">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1586190299428" />
+>>>>>>> Stashed changes
   </component>
 </project>
