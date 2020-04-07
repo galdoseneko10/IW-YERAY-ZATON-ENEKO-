@@ -29,7 +29,7 @@ class Cliente(models.Model):
 
 
 # PEDIDO
-class Pedido(models.Model):
+class Pedidos(models.Model):
     codigo_referencia = models.CharField(max_length=50)
     fecha = models.DateField()
     datos_cliente = models.ManyToManyField(Cliente)
