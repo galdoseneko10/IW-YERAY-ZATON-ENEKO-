@@ -6,20 +6,20 @@ from django.db import models
 
 
 # COMPONENTES
-class Componentes(models.Model):
+class Componente(models.Model):
     codigo_referencia = models.IntegerField()
     nombre_modelo = models.CharField(max_length=50)
     marca = models.CharField(max_length=50)
 
 
 # PRODUCTOS
-class Productos(models.Model):
+class Producto(models.Model):
     referencia = models.CharField(max_length=50)
-    precio = models.IntegerField()
+    precio = models.FloatField()
     nombre = models.CharField(max_length=50)
     descripcion = models.CharField(max_length=100)
     categoria = models.CharField(max_length=50)
-    tipo_componente = models.ManyToManyField(Componentes)
+    tipo_componente = models.ManyToManyField(Componente)
 
 #CLIENTE
 class Cliente(models.Model):
@@ -29,10 +29,10 @@ class Cliente(models.Model):
 
 
 # PEDIDO
-class Pedidos(models.Model):
+class Pedido(models.Model):
     codigo_referencia = models.CharField(max_length=50)
     fecha = models.DateField()
-    datos_cliente = models.ManyToManyField(Cliente)
-    producto_solicitado = models.ManyToManyField(Productos)
+    datos_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+    producto_solicitado = models.ManyToManyField(Producto)
     cantidad_producto = models.IntegerField()
-    precio_total = models.IntegerField()
+    precio_total = models.FloatField()
