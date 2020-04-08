@@ -11,6 +11,9 @@ class Componente(models.Model):
     nombre_modelo = models.CharField(max_length=50)
     marca = models.CharField(max_length=50)
 
+    def __str__(self):
+        return self.nombre_modelo
+
 
 # PRODUCTOS
 class Producto(models.Model):
@@ -21,11 +24,17 @@ class Producto(models.Model):
     categoria = models.CharField(max_length=50)
     tipo_componente = models.ManyToManyField(Componente)
 
+    def __str__(self):
+        return self.nombre
+
 #CLIENTE
 class Cliente(models.Model):
     cif = models.CharField(max_length=50)
     nombre_empresa =  models.CharField(max_length=50)
     datos_contacto =  models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.nombre_empresa
 
 
 # PEDIDO
@@ -36,3 +45,6 @@ class Pedido(models.Model):
     producto_solicitado = models.ManyToManyField(Producto)
     cantidad_producto = models.IntegerField()
     precio_total = models.FloatField()
+
+    def __str__(self):
+        return self.codigo_referencia
