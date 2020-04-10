@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<form action="{% url 'pedido_create' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Nuevo Pedido" />
+</form>
+<br>
+<a href="{% url 'pedidos' %}">Volver a la lista</a>
+
+{% endblock %}

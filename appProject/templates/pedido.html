@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+
+{% block contenido %}
+<table>
+    <tr>
+        <td>ID</td>
+        <td>{{ pedido.codigo_referencia }}</td>
+    </tr>
+    <tr>
+        <td>Fecha</td>
+        <td>{{ pedido.fecha }}</td>
+    </tr>
+    <tr>
+        <td>Cliente</td>
+        <td>{{ pedido.datos_cliente }}</td>
+    </tr>
+    <tr>
+        <td>Producto</td>
+        <td>{{ pedido.producto_solicitado }}</td>
+    </tr>
+    <tr>
+        <td>Cantidad</td>
+        <td>{{ pedido.cantidad_producto }}</td>
+    </tr>
+
+    <tr>
+        <td>Precio</td>
+        <td>{{ pedido.precio_total }}</td>
+    </tr>
+
+</table>
+{% endblock %}

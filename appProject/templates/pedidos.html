@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+
+{% block contenido %}
+<ul>
+    {% for pro in lista_pedidos %}
+    <li>
+        {{ pro.codigo_referencia }}: {{ pro.fecha }}-----> {{  pro.cliente }}$
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
