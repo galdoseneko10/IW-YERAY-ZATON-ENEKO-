@@ -41,6 +41,6 @@ class CreateProductoView(View):
         form = ProductoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('noticia')
+            return redirect('index')
 
         return render(request, 'producto_create.html', {'form': form})
