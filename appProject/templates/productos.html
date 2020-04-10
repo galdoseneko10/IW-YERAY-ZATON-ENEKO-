@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+
+{% block contenido %}
+<ul>
+    {% for pro in lista_productos %}
+    <li>
+        {{ pro.id }}: {{ pro.nombre }}-----> {{  pro.precio }}$
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

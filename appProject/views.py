@@ -1,7 +1,10 @@
+from appProject.forms import ProductoForm
 from django.http import HttpResponse
+from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 
 from appProject.models import Producto
+from django.views.generic.base import View
 
 
 class ProductosListView(ListView):
@@ -25,3 +28,19 @@ class ProductoDetailView(DetailView):
         context['titulo_pagina'] = 'Detalles del Producto'
         return context
 
+class CreateProductoView(View):
+    def get(self, request, *args, **kwargs):
+        form = ProductoForm()
+        context = {
+            'form': form,
+            'titulo_pagina': 'Publicar nueva noticia'
+        }
+        return render(request, 'producto_create.html', context)
+
+    def post(self, request, *args, **kwargs):
+        form = ProductoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('noticia')
+
+        return render(request, 'producto_create.html', {'form': form})
