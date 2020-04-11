@@ -9,9 +9,6 @@ from django.views.generic.base import View
 
 
 
-
-
-
 class ProductosListView(ListView):
     model = Producto
     template_name = 'productos.html'
@@ -50,19 +47,20 @@ class CreateProductoView(View):
 
         return render(request, 'producto_create.html', {'form': form})
 
-def delete(request, producto_id):
+
+def delete_producto(request, producto_id):
     # Recuperamos la instancia de la persona y la borramos
     instancia = Producto.objects.get(id=producto_id)
     instancia.delete()
     return redirect('productos')
 
-def edit(request, producto_id):
-    # Recuperamos la instancia de la persona
+
+def edit_producto(request, producto_id):
+    #Recuperamos la instancia de la persona
     instancia = Producto.objects.get(id=producto_id)
 
     # Creamos el formulario con los datos de la instancia
     form = ProductoForm(instance=instancia)
-
     # Comprobamos si se ha enviado el formulario
     if request.method == "POST":
         # Actualizamos el formulario con los datos recibidos
@@ -70,7 +68,7 @@ def edit(request, producto_id):
         # Si el formulario es válido...
         if form.is_valid():
             # Guardamos el formulario pero sin confirmarlo,
-            # así conseguiremos una instancia para manejarla
+             # así conseguiremos una instancia para manejarla
             instancia = form.save(commit=False)
             # Podemos guardarla cuando queramos
             instancia.save()
@@ -158,3 +156,33 @@ class CreateClienteView(View):
             return redirect('clientes')
 
         return render(request, 'cliente_create.html', {'form': form})
+
+def delete_cliente(request, cliente_id):
+    # Recuperamos la instancia de la persona y la borramos
+    instancia = Cliente.objects.get(id=cliente_id)
+    instancia.delete()
+    return redirect('clientes')
+
+
+def edit_cliente(request, cliente_id):
+    #Recuperamos la instancia de la persona
+    instancia = Cliente.objects.get(id=cliente_id)
+
+    # Creamos el formulario con los datos de la instancia
+    form = ClienteForm(instance=instancia)
+    # Comprobamos si se ha enviado el formulario
+    if request.method == "POST":
+        # Actualizamos el formulario con los datos recibidos
+        form = ClienteForm(request.POST, instance=instancia)
+        # Si el formulario es válido...
+        if form.is_valid():
+            # Guardamos el formulario pero sin confirmarlo,
+             # así conseguiremos una instancia para manejarla
+            instancia = form.save(commit=False)
+            # Podemos guardarla cuando queramos
+            instancia.save()
+            return redirect('clientes')
+
+    # Si llegamos al final renderizamos el formulario
+    return render(request, "cliente_edit.html", {'form': form})
+
