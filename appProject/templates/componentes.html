@@ -5,10 +5,10 @@
 <ul>
     {% for com in lista_componentes %}
     <li>
-        {{ com.id }}: {{ pro.nombre }}-----> {{  com.marca }}$
+        {{ com.id }}: {{ com.nombre_modelo }}-----> {{  com.marca }}$
         <a href="edit/{{ com.id }}">Editar</a>
         <a href="delete/{{ com.id }}"
-          onClick="return confirm('¿Seguro que quieres borrar a {{com.nombre}}?');">
+          onClick="return confirm('¿Seguro que quieres borrar a {{com.nombre_modelo}}?');">
             Borrar
         </a>
     </li>

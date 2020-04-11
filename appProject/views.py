@@ -1,9 +1,9 @@
-from appProject.forms import ProductoForm, PedidoForm, ClienteForm
+from appProject.forms import ProductoForm, PedidoForm, ClienteForm, ComponenteForm
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 
-from appProject.models import Producto, Cliente
+from appProject.models import Producto, Cliente, Componente
 from appProject.models import Pedido
 from django.views.generic.base import View
 
@@ -191,7 +191,7 @@ def edit_cliente(request, cliente_id):
 class ComponentesListView(ListView):
     model = Componente
     template_name = 'componentes.html'
-    queryset = Componente.objects.order_by('nombre_componente')
+    queryset = Componente.objects.order_by('nombre_modelo')
     context_object_name = 'lista_componentes'
 
     def get_context_data(self, **kwargs):
@@ -216,6 +216,7 @@ class CreateComponenteView(View):
             'form': form,
             'titulo_pagina': 'Crear nuevo Componente'
         }
+
         return render(request, 'componente_create.html', context)
 
     def post(self, request, *args, **kwargs):

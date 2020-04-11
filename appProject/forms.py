@@ -18,8 +18,8 @@ class ClienteForm(forms.ModelForm):
         model = Cliente
         fields = '__all__'
 
-
 class ComponenteForm(forms.ModelForm):
     class Meta:
         model = Componente
-        fields = '_all_'
+        fields = '__all__'
+
