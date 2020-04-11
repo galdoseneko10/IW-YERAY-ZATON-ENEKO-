@@ -86,7 +86,6 @@ class CreatePedidosView(View):
         form = PedidoForm(request.POST)
 
         if form.is_valid():
-            print("hola")
             form.save()
             return redirect('pedidos')
 
