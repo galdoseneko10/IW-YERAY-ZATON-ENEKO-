@@ -46,9 +46,15 @@ class CreateProductoView(View):
         form = ProductoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('index')
+            return redirect('productos')
 
         return render(request, 'producto_create.html', {'form': form})
+
+def delete(request, producto_id):
+    # Recuperamos la instancia de la persona y la borramos
+    instancia = Producto.objects.get(id=producto_id)
+    instancia.delete()
+    return redirect('productos')
 
 
 class PedidosListView(ListView):
