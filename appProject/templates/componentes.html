@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+
+{% block contenido %}
+<ul>
+    {% for com in lista_componentes %}
+    <li>
+        {{ com.id }}: {{ pro.nombre }}-----> {{  com.marca }}$
+        <a href="edit/{{ com.id }}">Editar</a>
+        <a href="delete/{{ com.id }}"
+          onClick="return confirm('¿Seguro que quieres borrar a {{com.nombre}}?');">
+            Borrar
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

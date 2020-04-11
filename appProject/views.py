@@ -186,3 +186,71 @@ def edit_cliente(request, cliente_id):
     # Si llegamos al final renderizamos el formulario
     return render(request, "cliente_edit.html", {'form': form})
 
+# COMPONETES
+
+class ComponentesListView(ListView):
+    model = Componente
+    template_name = 'componentes.html'
+    queryset = Componente.objects.order_by('nombre_componente')
+    context_object_name = 'lista_componentes'
+
+    def get_context_data(self, **kwargs):
+        context = super(ComponentesListView, self).get_context_data(**kwargs)
+        context['titulo_pagina'] = 'Componentes'
+        return context
+
+
+class ComponenteDetailView(DetailView):
+    model = Cliente
+    template_name = 'componente.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(ComponenteDetailView, self).get_context_data(**kwargs)
+        context['titulo_pagina'] = 'Datos del Componente'
+        return context
+
+class CreateComponenteView(View):
+    def get(self, request, *args, **kwargs):
+        form = ComponenteForm()
+        context = {
+            'form': form,
+            'titulo_pagina': 'Crear nuevo Componente'
+        }
+        return render(request, 'componente_create.html', context)
+
+    def post(self, request, *args, **kwargs):
+        form = ComponenteForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('componentes')
+
+        return render(request, 'componente_create.html', {'form': form})
+
+def delete_componente(request, componente_id):
+    # Recuperamos la instancia del componente y lo borramos
+    instancia = Componente.objects.get(id=componente_id)
+    instancia.delete()
+    return redirect('componentes')
+
+
+def edit_componente(request, componente_id):
+    #Recuperamos la instancia del componente
+    instancia = Componente.objects.get(id=componente_id)
+
+    # Creamos el formulario con los datos de la instancia
+    form = ComponenteForm(instance=instancia)
+    # Comprobamos si se ha enviado el formulario
+    if request.method == "POST":
+        # Actualizamos el formulario con los datos recibidos
+        form = ComponenteForm(request.POST, instance=instancia)
+        # Si el formulario es válido...
+        if form.is_valid():
+            # Guardamos el formulario pero sin confirmarlo,
+             # así conseguiremos una instancia para manejarla
+            instancia = form.save(commit=False)
+            # Podemos guardarla cuando queramos
+            instancia.save()
+            return redirect('componentes')
+
+    # Si llegamos al final renderizamos el formulario
+    return render(request, "componente_edit.html", {'form': form})
