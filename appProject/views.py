@@ -1,9 +1,9 @@
-from appProject.forms import ProductoForm, PedidoForm
+from appProject.forms import ProductoForm, PedidoForm, ClienteForm
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 
-from appProject.models import Producto
+from appProject.models import Producto, Cliente
 from appProject.models import Pedido
 from django.views.generic.base import View
 
@@ -92,3 +92,40 @@ class CreatePedidosView(View):
         return render(request, 'pedido_create.html', {'form': form})
 
 
+class ClientesListView(ListView):
+    model = Cliente
+    template_name = 'clientes.html'
+    queryset = Cliente.objects.order_by('nombre_empresa')
+    context_object_name = 'lista_clientes'
+
+    def get_context_data(self, **kwargs):
+        context = super(ClientesListView, self).get_context_data(**kwargs)
+        context['titulo_pagina'] = 'Clientes'
+        return context
+
+
+class ClienteDetailView(DetailView):
+    model = Cliente
+    template_name = 'cliente.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(ClienteDetailView, self).get_context_data(**kwargs)
+        context['titulo_pagina'] = 'Datos del Cliente'
+        return context
+
+class CreateClienteView(View):
+    def get(self, request, *args, **kwargs):
+        form = ClienteForm()
+        context = {
+            'form': form,
+            'titulo_pagina': 'Crear nuevo Cliente'
+        }
+        return render(request, 'cliente_create.html', context)
+
+    def post(self, request, *args, **kwargs):
+        form = ClienteForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('clientes')
+
+        return render(request, 'cliente_create.html', {'form': form})

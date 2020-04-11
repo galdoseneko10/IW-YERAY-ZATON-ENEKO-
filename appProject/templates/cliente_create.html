@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<form action="{% url 'cliente_create' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Nuevo Cliente" />
+</form>
+<br>
+<a href="{% url 'index' %}">Volver a la lista</a>
+
+{% endblock %}
+

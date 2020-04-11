@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+
+{% block contenido %}
+<ul>
+    {% for cli in lista_clientes %}
+    <li>
+        {{ cli.nombre_empresa }}: {{ cli.cif }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

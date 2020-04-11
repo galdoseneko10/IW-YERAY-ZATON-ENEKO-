@@ -30,8 +30,8 @@ class Producto(models.Model):
 #CLIENTE
 class Cliente(models.Model):
     cif = models.CharField(max_length=50)
-    nombre_empresa =  models.CharField(max_length=50)
-    datos_contacto =  models.CharField(max_length=50)
+    nombre_empresa = models.CharField(max_length=50)
+    datos_contacto = models.CharField(max_length=50)
 
     def __str__(self):
         return self.nombre_empresa

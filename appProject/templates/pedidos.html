@@ -3,9 +3,9 @@
 
 {% block contenido %}
 <ul>
-    {% for pro in lista_pedidos %}
+    {% for ped in lista_pedidos %}
     <li>
-        {{ pro.codigo_referencia }}: {{ pro.fecha }}-----> {{  pro.cliente }}$
+        {{ ped.codigo_referencia }}: {{ ped.fecha }}-----> {{  ped.cliente }}
     </li>
     {% endfor %}
 </ul>
