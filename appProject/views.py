@@ -38,7 +38,7 @@ class CreateProductoView(View):
         form = ProductoForm()
         context = {
             'form': form,
-            'titulo_pagina': 'Publicar nueva noticia'
+            'titulo_pagina': 'Crear nuevo producto'
         }
         return render(request, 'producto_create.html', context)
 
