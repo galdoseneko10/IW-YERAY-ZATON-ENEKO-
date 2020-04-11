@@ -56,6 +56,29 @@ def delete(request, producto_id):
     instancia.delete()
     return redirect('productos')
 
+def edit(request, producto_id):
+    # Recuperamos la instancia de la persona
+    instancia = Producto.objects.get(id=producto_id)
+
+    # Creamos el formulario con los datos de la instancia
+    form = ProductoForm(instance=instancia)
+
+    # Comprobamos si se ha enviado el formulario
+    if request.method == "POST":
+        # Actualizamos el formulario con los datos recibidos
+        form = ProductoForm(request.POST, instance=instancia)
+        # Si el formulario es válido...
+        if form.is_valid():
+            # Guardamos el formulario pero sin confirmarlo,
+            # así conseguiremos una instancia para manejarla
+            instancia = form.save(commit=False)
+            # Podemos guardarla cuando queramos
+            instancia.save()
+            return redirect('productos')
+
+    # Si llegamos al final renderizamos el formulario
+    return render(request, "producto_edit.html", {'form': form})
+
 
 class PedidosListView(ListView):
     model = Pedido
