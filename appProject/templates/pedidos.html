@@ -6,6 +6,11 @@
     {% for ped in lista_pedidos %}
     <li>
         {{ ped.codigo_referencia }}: {{ ped.fecha }}-----> {{  ped.cliente }}
+        <a href="edit/{{ ped.id }}">Editar</a>
+        <a href="delete/{{ ped.id }}"
+          onClick="return confirm('¿Seguro que quieres borrar a {{ped.codigo_referencia}}?');">
+            Borrar
+        </a>
     </li>
     {% endfor %}
 </ul>

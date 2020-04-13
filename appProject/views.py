@@ -118,6 +118,34 @@ class CreatePedidosView(View):
 
         return render(request, 'pedido_create.html', {'form': form})
 
+def delete_pedido(request, pedido_id):
+    # Recuperamos la instancia del componente y lo borramos
+    instancia = Pedido.objects.get(id=pedido_id)
+    instancia.delete()
+    return redirect('pedidos')
+
+
+def edit_pedido(request, pedido_id):
+    #Recuperamos la instancia del componente
+    instancia = Pedido.objects.get(id=pedido_id)
+
+    # Creamos el formulario con los datos de la instancia
+    form = PedidoForm(instance=instancia)
+    # Comprobamos si se ha enviado el formulario
+    if request.method == "POST":
+        # Actualizamos el formulario con los datos recibidos
+        form = PedidoForm(request.POST, instance=instancia)
+        # Si el formulario es válido...
+        if form.is_valid():
+            # Guardamos el formulario pero sin confirmarlo,
+             # así conseguiremos una instancia para manejarla
+            instancia = form.save(commit=False)
+            # Podemos guardarla cuando queramos
+            instancia.save()
+            return redirect('pedidos')
+
+    # Si llegamos al final renderizamos el formulario
+    return render(request, "pedido_edit.html", {'form': form})
 
 class ClientesListView(ListView):
     model = Cliente
