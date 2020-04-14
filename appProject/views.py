@@ -229,7 +229,7 @@ class ComponentesListView(ListView):
 
 
 class ComponenteDetailView(DetailView):
-    model = Cliente
+    model = Componente
     template_name = 'componente.html'
 
     def get_context_data(self, **kwargs):
