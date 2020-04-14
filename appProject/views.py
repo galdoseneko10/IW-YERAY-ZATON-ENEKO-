@@ -68,7 +68,7 @@ def edit_producto(request, producto_id):
         # Si el formulario es válido...
         if form.is_valid():
             # Guardamos el formulario pero sin confirmarlo,
-             # así conseguiremos una instancia para manejarla
+            # así conseguiremos una instancia para manejarla
             instancia = form.save(commit=False)
             # Podemos guardarla cuando queramos
             instancia.save()
