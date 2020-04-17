@@ -103,7 +103,11 @@ class PedidoDetailView(DetailView):
 class CreatePedidosView(View):
     def get(self, request, *args, **kwargs):
         form = PedidoForm()
+        data = {'clientes':Cliente.objects.all(),
+                'productos':Producto.objects.all()
+        }
         context = {
+            'data' : data,
             'form': form,
             'titulo_pagina': 'Añadir nuevo pedido'
         }
@@ -111,8 +115,10 @@ class CreatePedidosView(View):
 
     def post(self, request, *args, **kwargs):
         form = PedidoForm(request.POST)
+        print(request.POST.getlist('poducto_solicitado[]'))
 
         if form.is_valid():
+
             form.save()
             return redirect('pedidos')
 
