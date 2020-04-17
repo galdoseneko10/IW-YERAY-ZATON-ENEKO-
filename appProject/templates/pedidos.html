@@ -8,7 +8,7 @@
         {{ ped.codigo_referencia }}: {{ ped.fecha }}-----> {{  ped.cliente }}
         <a href="edit/{{ ped.id }}">Editar</a>
         <a href="delete/{{ ped.id }}"
-          onClick="return confirm('¿Seguro que quieres borrar a {{ped.codigo_referencia}}?');">
+          onClick="return confirm('¿Seguro que quieres borrar el pedido: {{ped.codigo_referencia}}?');">
             Borrar
         </a>
     </li>

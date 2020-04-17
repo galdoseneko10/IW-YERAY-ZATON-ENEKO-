@@ -8,7 +8,7 @@
         {{ pro.id }}: {{ pro.nombre }}-----> {{  pro.precio }}$
         <a href="edit/{{ pro.id }}">Editar</a>
         <a href="delete/{{ pro.id }}"
-          onClick="return confirm('¿Seguro que quieres borrar a {{pro.nombre}}?');">
+          onClick="return confirm('¿Seguro que quieres borrar el producto: {{pro.nombre}}?');">
             Borrar
         </a>
     </li>
