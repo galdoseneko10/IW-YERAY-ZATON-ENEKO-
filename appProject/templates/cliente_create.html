@@ -4,11 +4,34 @@
 
 <form action="{% url 'cliente_create' %}" method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Nuevo Cliente" />
+    <div class="div">
+        <h2>{{ titulo_pagina }}</h2>
+        <div>
+           <strong>CIF:</strong>
+            <br>
+            <input type="text" name="cif" >
+        </div>
+        <br>
+        <div>
+           <strong>Nombre Empresa:</strong>
+            <br>
+            <input type="text" name="nombre_empresa" >
+        </div>
+        <br>
+        <div>
+           <strong>Datos Contacto:</strong>
+            <br>
+            <input type="text" name="datos_contacto" >
+        </div>
+        <br>
+        <br>
+        <div>
+            <input type="submit" value="Añadir Cliente" />
+        </div>
+    </div>
 </form>
 <br>
-<a href="{% url 'clientes' %}">Volver a la lista</a>
+<a class="a1" href="{% url 'clientes' %}">Volver a la lista</a>
 
 {% endblock %}
 

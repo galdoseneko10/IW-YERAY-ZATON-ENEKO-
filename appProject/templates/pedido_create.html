@@ -4,23 +4,44 @@
 
 <form action="{% url 'pedido_create' %}" method="post">
     {% csrf_token %}
-
-    <input type="text" name="codigo_referencia" >
-<input type="date" name="fecha">
-<select name="datos_cliente" >
-    {%for cliente in data.clientes%}
-    <option value=""> {{cliente.nombre_empresa}}</option>
-    {%endfor%}
-</select>
-<select name="productos_lista[]" multiple="" id="">
-     {%for producto in data.productos%}
-    <option value="">{{producto.nombre}}</option>
-    {%endfor%}
-</select>
-
-    <input type="submit" value="Nuevo Pedido" />
+    <div class="div">
+        <h2>{{ titulo_pagina }}</h2>
+        <div>
+           <strong>Codigo Referencia:</strong>
+            <br>
+            <input type="text" name="codigo_referencia" >
+        </div>
+        <br>
+        <div>
+            <strong>Fecha:</strong>
+            <br>
+            <input type="date" name="fecha">
+        </div>
+        <br>
+        <div>
+            <strong>Datos del Cliente:</strong>
+            <br>
+            <select name="datos_cliente" >
+            {%for cliente in data.clientes%}
+            <option value=""> {{cliente.nombre_empresa}}</option>
+            {%endfor%}</select>
+        </div>
+        <br>
+        <div>
+            <strong>Productos:</strong><br>
+            <select name="productos_lista[]" multiple="" id="">
+            {%for producto in data.productos%}
+            <option value="">{{producto.nombre}}</option>
+            {%endfor%}</select>
+        </div>
+        <br>
+        <br>
+        <div>
+           <input type="submit" value="Crear Pedido" />
+        </div>
+    </div>
 </form>
 <br>
-<a href="{% url 'pedidos' %}">Volver a la lista</a>
+<a class="a1" href="{% url 'pedidos' %}">Volver a la lista</a>
 
 {% endblock %}

@@ -1,14 +1,47 @@
 <!DOCTYPE html>
 {%load static %}
-<html lang="en">
+
+<html>
+
 <head>
-    <link href= "{% static 'styles.css' %}" rel="stylesheet">
-    <meta charset="UTF-8">
-    <title>Title</title>
+        <link rel="stylesheet" href="maqueta.css">
 </head>
 <body>
-    <h1>Deustronic Components S.L</h1>
-    <h2>{{ titulo_pagina }}</h2>
+<header>
+    <div class="imgheader">
+        <a href="cliente_create.html" title="Pincha para accerder a Pagina Principal"><img
+                src="" alt="Imagen logo empresa" width="100px">
+        </a>
+    </div>
+    <h1><a href="PaginaPrincipal.html" title="Pincha para accerder a Pagina Principal">Deustronic Components S.L</a>
+    </h1>
+</header> <!-- Enlaces para las 3 hojas restantes justo debajo de la cabecera-->
+<main>
+    <div>
+        <a class="links" href="/../appProject/productos">Productos</a>
+        <a class="links" href="/../appProject/componentes">Componentes</a>
+        <a class="links" href="/../appProject/pedidos">Pedidos</a>
+    </div>
+    <link href= "{% static 'styles.css' %}" rel="stylesheet">
+    <meta charset="UTF-8">
     {% block contenido %}{% endblock %}
+    <footer>
+        <p><strong>Telefono: 642737866 </strong></p>
+        <p><strong>Email: ylcincidence@gmail.com</strong></p>
+        <!-- logo instagram, facebook y eso con link a sus paginas -->
+        <a href="https://www.instagram.com/?hl=es"><img width="50px" title="Pincha para accerder a Instagram"
+                    src="https://upload.wikimedia.org/wikipedia/commons/5/58/Instagram-Icon.png"
+                    alt="Imagen de Instagram"></a>
+        <a href="https://de-de.facebook.com/"><img width="50px" title="Pincha para accerder a Facebook"
+                    src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
+                    alt="Imagen de Facebook"></a>
+        <a href="https://twitter.com/?lang=de"><img width="50px" title="Pincha para accerder a Twitter"
+                    src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/twitter_circle_color-512.png"
+                    alt="Imagen de Twitter"></a>
+        <a href="https://www.youtube.com/?gl=DE"><img width="50px" title="Pincha para accerder a YouTube"
+                    src="https://images.vexels.com/media/users/3/137425/isolated/preview/f2ea1ded4d037633f687ee389a571086-youtube-icon-logo-by-vexels.png"
+                    alt="Imagen de Youtube"></a>
+    </footer>
+</main>
 </body>
 </html>
