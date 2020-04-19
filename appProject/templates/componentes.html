@@ -2,15 +2,16 @@
 
 
 {% block contenido %}
-<ul>
+<ul class="visualizar">
     {% for com in lista_componentes %}
-    <li>
+    <li class="visualizar1">
         {{ com.id }}: {{ com.nombre_modelo }}-----> {{  com.marca }}$
         <a href="edit/{{ com.id }}">Editar</a>
         <a href="delete/{{ com.id }}"
           onClick="return confirm('¿Seguro que quieres borrar a {{com.nombre_modelo}}?');">
             Borrar
         </a>
+        <a href="/../appProject/componente/{{ com.id }}">Ver</a>
     </li>
     {% endfor %}
 </ul>

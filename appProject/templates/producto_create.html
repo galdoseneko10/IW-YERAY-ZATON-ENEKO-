@@ -2,16 +2,15 @@
 
 {% block contenido %}
 
-<form action="{% url 'producto_create' %}" method="post">
+<form method="POST">
     <div class="div">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <div>
-           <input type="submit" value="Añadir Producto" />
-        </div>
+    {{ form.as_p }}
+    {% csrf_token %}
+    <button type="submit">Añadir</button>
     </div>
 </form>
-<br>
-<a class="a1" href="{% url 'productos' %}">Volver a la lista</a>
 
 {% endblock %}
+
+
+

@@ -2,15 +2,16 @@
 
 
 {% block contenido %}
-<ul>
+<ul class="visualizar">
     {% for pro in lista_productos %}
-    <li>
+    <li class="visualizar1">
         {{ pro.id }}: {{ pro.nombre }}-----> {{  pro.precio }}$
         <a href="edit/{{ pro.id }}">Editar</a>
         <a href="delete/{{ pro.id }}"
           onClick="return confirm('¿Seguro que quieres borrar el producto: {{pro.nombre}}?');">
             Borrar
         </a>
+        <a href="/../appProject/producto/{{ pro.id }}">Ver</a>
     </li>
     {% endfor %}
 </ul>

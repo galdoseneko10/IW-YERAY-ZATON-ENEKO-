@@ -22,4 +22,5 @@ urlpatterns = [
     path('pedido/create/', views.CreatePedidosView.as_view(), name='pedido_create'),
     path('pedidos/delete/<int:pedido_id>/', views.delete_pedido, name='pedido_delete'),
     path('pedidos/edit/<int:pedido_id>/', views.edit_pedido, name='pedido_edit'),
+    path('paginaprincipal.html', views.paginaprincipal, name='pagprincipal')
 ]

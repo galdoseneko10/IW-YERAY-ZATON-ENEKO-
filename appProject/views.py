@@ -35,7 +35,7 @@ class CreateProductoView(View):
         form = ProductoForm()
         context = {
             'form': form,
-            'titulo_pagina': 'Crear nuevo producto'
+            'titulo_pagina': 'Añadir nuevo producto'
         }
         return render(request, 'producto_create.html', context)
 
@@ -109,7 +109,7 @@ class CreatePedidosView(View):
         context = {
             'data' : data,
             'form': form,
-            'titulo_pagina': 'Añadir nuevo pedido'
+            'titulo_pagina': 'Crear nuevo pedido'
         }
         return render(request, 'pedido_create.html', context)
 
@@ -179,7 +179,7 @@ class CreateClienteView(View):
         form = ClienteForm()
         context = {
             'form': form,
-            'titulo_pagina': 'Crear nuevo Cliente'
+            'titulo_pagina': 'Añadir nuevo Cliente'
         }
         return render(request, 'cliente_create.html', context)
 
@@ -248,7 +248,7 @@ class CreateComponenteView(View):
         form = ComponenteForm()
         context = {
             'form': form,
-            'titulo_pagina': 'Crear nuevo Componente'
+            'titulo_pagina': 'Añadir nuevo Componente'
         }
 
         return render(request, 'componente_create.html', context)
@@ -289,3 +289,7 @@ def edit_componente(request, componente_id):
 
     # Si llegamos al final renderizamos el formulario
     return render(request, "componente_edit.html", {'form': form})
+
+
+def paginaprincipal(request):
+    return render(request,"paginaprincipal.html")

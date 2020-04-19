@@ -1,47 +1,101 @@
 <!DOCTYPE html>
 {%load static %}
-
 <html>
 
-<head>
-        <link rel="stylesheet" href="maqueta.css">
-</head>
-<body>
-<header>
-    <div class="imgheader">
-        <a href="cliente_create.html" title="Pincha para accerder a Pagina Principal"><img
-                src="" alt="Imagen logo empresa" width="100px">
-        </a>
-    </div>
-    <h1><a href="PaginaPrincipal.html" title="Pincha para accerder a Pagina Principal">Deustronic Components S.L</a>
-    </h1>
-</header> <!-- Enlaces para las 3 hojas restantes justo debajo de la cabecera-->
-<main>
-    <div>
-        <a class="links" href="/../appProject/productos">Productos</a>
-        <a class="links" href="/../appProject/componentes">Componentes</a>
-        <a class="links" href="/../appProject/pedidos">Pedidos</a>
-    </div>
-    <link href= "{% static 'styles.css' %}" rel="stylesheet">
+    <head>
+        <link href= "{% static 'styles.css' %}" rel="stylesheet">
     <meta charset="UTF-8">
-    {% block contenido %}{% endblock %}
-    <footer>
-        <p><strong>Telefono: 642737866 </strong></p>
-        <p><strong>Email: ylcincidence@gmail.com</strong></p>
-        <!-- logo instagram, facebook y eso con link a sus paginas -->
-        <a href="https://www.instagram.com/?hl=es"><img width="50px" title="Pincha para accerder a Instagram"
+    </head>
+
+    <body>
+        <header>
+            <div class="imgheader">
+                <a href="PaginaPrincipal.html" title="Pincha para accerder a Pagina Principal"><img
+                        src="" alt="Imagen logo empresa" width="100px">
+                </a>
+            </div>
+            <h1><a href="/../appProject/paginaprincipal.html" title="Pincha para accerder a Pagina Principal">Deustronic Components S.L</a>
+            </h1>
+        </header>
+        <!-- Enlaces para las 3 hojas restantes justo debajo de la cabecera-->
+        <main>
+            <div>
+                <ul class="menu">
+				    <li><a >Productos</a>
+                        <ul class="submenu">
+						    <li><a href="/../appProject/productos">Todos los Productos</a></li>
+						    <li><a href="/../appProject/producto/create">Añadir Producto</a></li>
+					    </ul>
+                    </li>
+				    <li><a href="/../appProject/componentes">Componentes</a>
+					    <ul class="submenu">
+						    <li><a href="/../appProject/componentes">Todos los Componentes</a></li>
+						    <li><a href="/../appProject/componente/create">Añadir Componente</a></li>
+					    </ul>
+				    </li>
+				    <li><a href="#">Clientes</a>
+                        <ul class="submenu">
+						    <li><a href="/../appProject/clientes">Todos los Clientes</a></li>
+						    <li><a href="/../appProject/cliente/create">Añadir Cliente</a></li>
+					    </ul>
+                    </li>
+                    <li><a>Pedidos</a>
+                        <ul class="submenu">
+						    <li><a href="/../appProject/pedidos">Todos los Pedidos</a></li>
+						    <li><a href="/../appProject/pedido/create">Crear Pedido</a></li>
+					    </ul>
+                    </li>
+			    </ul>
+            </div>
+            <div>
+                <div class="separacion">
+                    <!-- Tabla resumida de incidencias en la pagina principal -->
+                        {% block contenido %}{% endblock %}
+                </div>
+
+                <!-- Columna parte derecha-->
+                <div class="columnader">
+                    <div>
+                        <h3>Noticias Fabrica</h3>
+                        <div class="div1">
+                            <h4>!!Alerta por Coronavirus!!</h4>
+                            <p>Se informa de que han habido varios casos de Coronavirus en la Fabrica
+                                Por favor, tomen precauciones.
+                            </p>
+                        </div>
+                        <div class="div1">
+                            <h4>Llegada de personal</h4>
+                            <p>Se informa de que en breves dias llegara personal de Charleston para ver los procesos
+                                realizados en la Fabrica de Vitoria</p>
+                        </div>
+                        <div class="div1">
+                            <h4>Falta del material</h4>
+                            <p>Se informa que pararemos la produccion en 2 meses si no mejora la situacion debido a
+                                falta de material</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <br><br><br><br>
+        <a class="a1" onclick="history.back(-1)"> Atras </a>
+        <footer>
+            <p><strong>Telefono: 642737866 </strong></p>
+            <p><strong>Email: ylcincidence@gmail.com</strong></p>
+            <!-- logo instagram, facebook y eso con link a sus paginas -->
+            <a href="https://www.instagram.com/?hl=es"><img width="50px" title="Pincha para accerder a Instagram"
                     src="https://upload.wikimedia.org/wikipedia/commons/5/58/Instagram-Icon.png"
                     alt="Imagen de Instagram"></a>
-        <a href="https://de-de.facebook.com/"><img width="50px" title="Pincha para accerder a Facebook"
+            <a href="https://de-de.facebook.com/"><img width="50px" title="Pincha para accerder a Facebook"
                     src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
                     alt="Imagen de Facebook"></a>
-        <a href="https://twitter.com/?lang=de"><img width="50px" title="Pincha para accerder a Twitter"
+            <a href="https://twitter.com/?lang=de"><img width="50px" title="Pincha para accerder a Twitter"
                     src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/twitter_circle_color-512.png"
                     alt="Imagen de Twitter"></a>
-        <a href="https://www.youtube.com/?gl=DE"><img width="50px" title="Pincha para accerder a YouTube"
+            <a href="https://www.youtube.com/?gl=DE"><img width="50px" title="Pincha para accerder a YouTube"
                     src="https://images.vexels.com/media/users/3/137425/isolated/preview/f2ea1ded4d037633f687ee389a571086-youtube-icon-logo-by-vexels.png"
                     alt="Imagen de Youtube"></a>
-    </footer>
-</main>
-</body>
-</html>
+        </footer>
+    </body>
+
+    </html>

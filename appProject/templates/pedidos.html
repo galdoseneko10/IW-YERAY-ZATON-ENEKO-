@@ -2,15 +2,16 @@
 
 
 {% block contenido %}
-<ul>
+<ul class="visualizar">
     {% for ped in lista_pedidos %}
-    <li>
+    <li class="visualizar1">
         {{ ped.codigo_referencia }}: {{ ped.fecha }}-----> {{  ped.cliente }}
         <a href="edit/{{ ped.id }}">Editar</a>
         <a href="delete/{{ ped.id }}"
           onClick="return confirm('¿Seguro que quieres borrar el pedido: {{ped.codigo_referencia}}?');">
             Borrar
         </a>
+        <a href="/../appProject/pedido/{{ ped.id }}">Ver</a>
     </li>
     {% endfor %}
 </ul>
