@@ -3,9 +3,11 @@
 {% block contenido %}
 
 <form method="POST">
+    <div class="div">
     {{ form.as_p }}
     {% csrf_token %}
     <button type="submit">Editar</button>
+    </div>
 </form>
 
 {% endblock %}

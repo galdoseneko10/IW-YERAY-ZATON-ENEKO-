@@ -1,6 +1,5 @@
-
 body{
-    background-image: url(https://www.creativosonline.org/blog/wp-content/uploads/2014/02/fondos-gratis.jpg);
+    background-image: url();
     font-family:Arial;
     margin: 20px;
   }
@@ -71,5 +70,6 @@ main{
     margin-top: 20px;
     padding: 20px;
     margin-right:20px;
+    font-weight: bold;
   }
 

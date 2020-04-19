@@ -2,10 +2,33 @@
 
 {% block contenido %}
 
-<form method="POST">
-    {{ form.as_p }}
+<form action="{% url 'cliente_create' %}" method="post">
     {% csrf_token %}
-    <button type="submit">Editar</button>
+    <div class="div">
+        <h2>{{ titulo_pagina }}</h2>
+        <div>
+           <strong>CIF:</strong>
+            <br>
+            <input type="text" name="cif" >
+        </div>
+        <br>
+        <div>
+           <strong>Nombre Empresa:</strong>
+            <br>
+            <input type="text" name="nombre_empresa" >
+        </div>
+        <br>
+        <div>
+           <strong>Datos Contacto:</strong>
+            <br>
+            <input type="text" name="datos_contacto" >
+        </div>
+        <br>
+        <br>
+        <div>
+            <input type="submit" value="Editar" />
+        </div>
+    </div>
 </form>
-
 {% endblock %}
+

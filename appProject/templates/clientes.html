@@ -2,16 +2,18 @@
 
 
 {% block contenido %}
-<ul>
-    {% for cli in lista_clientes %}
-    <li>
-        {{ cli.nombre_empresa }}: {{ cli.cif }}
+
+ <ul>
+     {% for cli in lista_clientes %}
+     <li>
+         {{ cli.nombre_empresa }}: {{ cli.cif }}
          <a href="edit/{{ cli.id }}">Editar</a>
-        <a href="delete/{{ cli.id }}"
-          onClick="return confirm('¿Seguro que quieres borrar los datos de: {{cli.nombre_empresa}}?');">
-            Borrar
-        </a>
-    </li>
-    {% endfor %}
-</ul>
+         <a href="delete/{{ cli.id }}"
+            onClick="return confirm('¿Seguro que quieres borrar los datos de: {{cli.nombre_empresa}}?');">
+             Borrar
+         </a>
+     </li>
+     {% endfor %}
+ </ul>
+
 {% endblock %}

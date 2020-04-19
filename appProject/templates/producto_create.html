@@ -3,48 +3,9 @@
 {% block contenido %}
 
 <form action="{% url 'producto_create' %}" method="post">
-    {% csrf_token %}
     <div class="div">
-        <h2>{{ titulo_pagina }}</h2>
-        <div>
-           <strong>Referencia:</strong>
-            <br>
-            <input type="text" name="referencia" >
-        </div>
-        <br>
-        <div>
-            <strong>Precio:</strong>
-            <br>
-            <input type="number" name="precio">
-        </div>
-        <br>
-        <div>
-           <strong>Nombre:</strong>
-            <br>
-            <input type="text" name="nombre" >
-        </div>
-        <br>
-        <div>
-           <strong>Descripcion:</strong>
-            <br>
-            <input type="text" name="descripcion" >
-        </div>
-        <br>
-        <div>
-           <strong>Categoria:</strong>
-            <br>
-            <input type="text" name="categoria" >
-        </div>
-        <br>
-        <div>
-            <strong>Tipo de Componente:</strong><br>
-            <select name="componentes_lista[]" multiple="" id="">
-            {%for componente in data.componentes%}
-            <option value="">{{componente.nombre_modelo}}</option>
-            {%endfor%}</select>
-        </div>
-        <br>
-        <br>
+        {% csrf_token %}
+        {{ form.as_p }}
         <div>
            <input type="submit" value="Añadir Producto" />
         </div>
