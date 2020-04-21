@@ -2,17 +2,33 @@
 
 
 {% block contenido %}
-<ul class="visualizar">
+<div class="componenteslista">
+    <table>
+        <tr>
+            <th>id</th>
+            <th>referencia</th>
+            <th>modelo</th>
+            <th>marca</th>
+            <th>Opciones</th>
+        </tr>
+        <tbody>
     {% for com in lista_componentes %}
-    <li class="visualizar1">
-        {{ com.id }}: {{ com.nombre_modelo }}-----> {{  com.marca }}$
-        <a href="edit/{{ com.id }}">Editar</a>
-        <a href="delete/{{ com.id }}"
-          onClick="return confirm('¿Seguro que quieres borrar a {{com.nombre_modelo}}?');">
-            Borrar
-        </a>
-        <a href="/../appProject/componente/{{ com.id }}">Ver</a>
-    </li>
-    {% endfor %}
-</ul>
+
+        <tr>
+            <td>{{com.id}}</td>
+            <td>{{com.codigo_referencia}}</td>
+            <td>{{ com.nombre_modelo }}</td>
+            <td>{{  com.marca }}</td>
+            <td> <a href="edit/{{ com.id }}">Editar</a>
+            <a href="delete/{{ com.id }}" onClick="return confirm('¿Seguro que quieres borrar a {{com.nombre_modelo}}?');">
+                Borrar
+            </a>
+            <a href="/../appProject/componente/{{ com.id }}">Ver</a></td>
+        </tr>
+
+        {% endfor %}
+         </tbody>
+    </table>
+
+</div>
 {% endblock %}

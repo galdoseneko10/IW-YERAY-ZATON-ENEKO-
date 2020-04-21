@@ -1,19 +1,31 @@
 {% extends "base.html" %}
-
-
 {% block contenido %}
+<div class="clienteslista">
 
 <ul class="visualizar">
     {% for cli in lista_clientes %}
     <li class="visualizar1">
-        {{ cli.nombre_empresa }}: {{ cli.cif }}
-        <a href="edit/{{ cli.id }}">Editar</a>
+        <ul class="element">
+            <br>
+            <li> Cliente:{{ cli.nombre_empresa }}</li>
+            <br>
+            <li> Cif:{{ cli.cif }} </li>
+            <br>
+            <li>Contacto:{{cli.datos_contacto}}</li>
+            <br>
+        </ul>
+
+        <br>
+
+        <a href="edit/{{ cli.id }}"><button>Editar</button></a>
         <a href="delete/{{ cli.id }}"
            onClick="return confirm('¿Seguro que quieres borrar los datos de: {{cli.nombre_empresa}}?');">
-            Borrar
+            <button>Borrar</button>
         </a>
-        <a href="/../appProject/cliente/{{ cli.id }}">Ver</a>
+        <a href="/../appProject/cliente/{{ cli.id }}"><button>Ver</button></a>
     </li>
     {% endfor %}
 </ul>
+    </div>
+
 {% endblock %}

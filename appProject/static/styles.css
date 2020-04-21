@@ -165,3 +165,25 @@ ul{
 	opacity: 1;
 
 }
+
+.clienteslista button{
+border: solid 00px;
+padding: 10px;
+border-radius: 5px;
+background:red;
+}
+
+.clienteslista .element{
+max-width:40%;
+margin: 0 auto;
+text-align:left;
+}
+
+.componenteslista table, .componenteslista th, .componenteslista tr, .componenteslista td{
+border: solid 1px black;
+}
+
+.componenteslista table{
+width: 100%;
+background: white;
+}
