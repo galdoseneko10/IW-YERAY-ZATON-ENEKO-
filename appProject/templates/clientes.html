@@ -1,10 +1,8 @@
 {% extends "base.html" %}
 {% block contenido %}
-<div class="clienteslista">
 
-<ul class="visualizar">
     {% for cli in lista_clientes %}
-    <li class="visualizar1">
+    <li  class="span3 gallery-item" data-id="id-1" data-type="illustration">
         <ul class="element">
             <br>
             <li> Cliente:{{ cli.nombre_empresa }}</li>
@@ -24,8 +22,10 @@
         </a>
         <a href="/../appProject/cliente/{{ cli.id }}"><button>Ver</button></a>
     </li>
+
     {% endfor %}
 </ul>
+
     </div>
 
 {% endblock %}

@@ -3,99 +3,152 @@
 <html>
 
     <head>
-        <link href= "{% static 'styles.css' %}" rel="stylesheet">
-    <meta charset="UTF-8">
-    </head>
+        <link href= "{% static 'bootstrap.css' %}" rel="stylesheet">
+        <link href= "{% static 'bootstrap-responsive.css' %}" rel="stylesheet">
+        <link href= "{% static 'custom-styles.css' %}" rel="stylesheet">
+        <meta charset="UTF-8">
 
-    <body>
-        <header>
-            <div class="imgheader">
-                <a href="/../appProject/paginaprincipal.html" title="Pincha para accerder a Pagina Principal"><img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/DC_Comics_logo.svg/1200px-DC_Comics_logo.svg.png"
-                        alt="Imagen logo empresa" width="80px">
-                </a>
+</head>
+
+<body class="home">
+
+    <div class="container">
+
+      <div class="row header"><!-- Begin Header -->
+
+        <!-- Logo
+        ================================================== -->
+        <div class="span5 logo">
+        	<a href="/../appProject/paginaprincipal.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/DC_Comics_logo.svg/1200px-DC_Comics_logo.svg.png"
+                width="80px" alt="" /></a>
+            <h5>Deustronic Components S.L</h5>
+        </div>
+
+        <!-- Main Navigation
+        ================================================== -->
+        <div class="span7 navigation">
+            <div class="navbar hidden-phone">
+
+            <ul class="nav">
+            <li class="dropdown active">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="/../appProject/productos">Productos <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/../appProject/productos">Todos los Productos</a></li>
+                    <li><a href="/../appProject/producto/create">Añadir Producto</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="/../appProject/componentes">Componentes <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/../appProject/componentes">Todos los Componentes</a></li>
+                    <li><a href="/../appProject/componente/create">Añadir Componente</a></li>
+                </ul>
+            </li>
+             <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="/../appProject/clientes">Clientes <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/../appProject/clientes">Todos los Clientes</a></li>
+                    <li><a href="/../appProject/cliente/create">Añadir Cliente</a></li>
+                </ul>
+             </li>
+             <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="/../appProject/pedidos">Pedidos <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/../appProject/pedidos">Todos los Pedidos</a></li>
+                    <li><a href="/../appProject/pedido/create">Crear Pedido</a></li>
+                </ul>
+             </li>
+            </ul>
             </div>
-            <h1><a href="/../appProject/paginaprincipal.html" title="Pincha para accerder a Pagina Principal">Deustronic Components S.L</a>
-            </h1>
-        </header>
-        <!-- Enlaces para las 3 hojas restantes justo debajo de la cabecera-->
-        <main>
-            <div>
-                <ul class="menu">
-				    <li><a >Productos</a>
-                        <ul class="submenu">
-						    <li><a href="/../appProject/productos">Todos los Productos</a></li>
-						    <li><a href="/../appProject/producto/create">Añadir Producto</a></li>
-					    </ul>
-                    </li>
-				    <li><a href="/../appProject/componentes">Componentes</a>
-					    <ul class="submenu">
-						    <li><a href="/../appProject/componentes">Todos los Componentes</a></li>
-						    <li><a href="/../appProject/componente/create">Añadir Componente</a></li>
-					    </ul>
-				    </li>
-				    <li><a href="#">Clientes</a>
-                        <ul class="submenu">
-						    <li><a href="/../appProject/clientes">Todos los Clientes</a></li>
-						    <li><a href="/../appProject/cliente/create">Añadir Cliente</a></li>
-					    </ul>
-                    </li>
-                    <li><a>Pedidos</a>
-                        <ul class="submenu">
-						    <li><a href="/../appProject/pedidos">Todos los Pedidos</a></li>
-						    <li><a href="/../appProject/pedido/create">Crear Pedido</a></li>
-					    </ul>
-                    </li>
-			    </ul>
-            </div>
+        </div>
+
+      </div>
+
+
             <div>
                 <div class="separacion">
                     <!-- Tabla resumida de incidencias en la pagina principal -->
                         {% block contenido %}{% endblock %}
                 </div>
 
-                <!-- Columna parte derecha-->
-                <div class="columnader">
-                    <div>
-                        <h3>Noticias Fabrica</h3>
-                        <div class="div1">
-                            <h4>!!Alerta por Coronavirus!!</h4>
-                            <p>Se informa de que han habido varios casos de Coronavirus en la Fabrica
-                                Por favor, tomen precauciones.
-                            </p>
-                        </div>
-                        <div class="div1">
-                            <h4>Llegada de personal</h4>
-                            <p>Se informa de que en breves dias llegara personal de Charleston para ver los procesos
-                                realizados en la Fabrica de Vitoria</p>
-                        </div>
-                        <div class="div1">
-                            <h4>Falta del material</h4>
-                            <p>Se informa que pararemos la produccion en 2 meses si no mejora la situacion debido a
-                                falta de material</p>
+                  <!-- Footer Area
+        ================================================== -->
+                <div class="footer-container"><!-- Begin Footer -->
+    	<div class="container">
+        	<div class="row footer-row">
+                <div class="span3 footer-col">
+                    <h5>About Us</h5>
+                   <img src="img/piccolo-footer-logo.png" alt="Piccolo" /><br /><br />
+                    <address>
+                        <strong>Dc</strong><br />
+                        123 Main St, Suite 500<br />
+                        New York, NY 12345<br />
+                    </address>
+
+            <!-- logo instagram, facebook y eso con link a sus paginas -->
+            <a href="https://www.instagram.com/?hl=es"><img width="30px" title="Pincha para accerder a Instagram"
+                    src="https://upload.wikimedia.org/wikipedia/commons/5/58/Instagram-Icon.png"
+                    alt="Imagen de Instagram"></a>
+            <a href="https://de-de.facebook.com/"><img width="30px" title="Pincha para accerder a Facebook"
+                    src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
+                    alt="Imagen de Facebook"></a>
+            <a href="https://twitter.com/?lang=de"><img width="30px" title="Pincha para accerder a Twitter"
+                    src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/twitter_circle_color-512.png"
+                    alt="Imagen de Twitter"></a>
+            <a href="https://www.youtube.com/?gl=DE"><img width="30px" title="Pincha para accerder a YouTube"
+                    src="https://images.vexels.com/media/users/3/137425/isolated/preview/f2ea1ded4d037633f687ee389a571086-youtube-icon-logo-by-vexels.png"
+                    alt="Imagen de Youtube"></a>
+
+                </div>
+                <div class="span3 footer-col">
+                    <h5>Latest Posts</h5>
+                     <ul class="post-list">
+                        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+                        <li><a href="#">Consectetur adipiscing elit est lacus gravida</a></li>
+                        <li><a href="#">Lectus sed orci molestie molestie etiam</a></li>
+                        <li><a href="#">Mattis consectetur adipiscing elit est lacus</a></li>
+                    </ul>
+                </div>
+                <div class="span3 footer-col">
+                    <h5>Flickr Photos</h5>
+                    <ul class="img-feed">
+                        <li><a href="#"><img src="" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row"><!-- Begin Sub Footer -->
+                <div class="span12 footer-col footer-sub">
+                    <div class="row no-margin">
+                        <div class="span6"><span class="left">Copyright 2020 Deustronic Theme. All rights reserved.</span></div>
+                        <div class="span6">
+                            <span class="right">
+                            <a href="/../appProject/paginaprincipal.html">Home</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="/../appProject/productos">Productos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="/../appProject/componentes">Componentes</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="/../appProject/clientes">Clientes</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="/../appProject/pedidos">Pedidos</a>
+                            </span>
                         </div>
                     </div>
                 </div>
-            </div>
-        </main>
-        <br><br><br><br>
-        <footer>
-            <p><strong>Telefono: 642737866 </strong></p>
-            <p><strong>Email: ylcincidence@gmail.com</strong></p>
-            <!-- logo instagram, facebook y eso con link a sus paginas -->
-            <a href="https://www.instagram.com/?hl=es"><img width="50px" title="Pincha para accerder a Instagram"
-                    src="https://upload.wikimedia.org/wikipedia/commons/5/58/Instagram-Icon.png"
-                    alt="Imagen de Instagram"></a>
-            <a href="https://de-de.facebook.com/"><img width="50px" title="Pincha para accerder a Facebook"
-                    src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
-                    alt="Imagen de Facebook"></a>
-            <a href="https://twitter.com/?lang=de"><img width="50px" title="Pincha para accerder a Twitter"
-                    src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/twitter_circle_color-512.png"
-                    alt="Imagen de Twitter"></a>
-            <a href="https://www.youtube.com/?gl=DE"><img width="50px" title="Pincha para accerder a YouTube"
-                    src="https://images.vexels.com/media/users/3/137425/isolated/preview/f2ea1ded4d037633f687ee389a571086-youtube-icon-logo-by-vexels.png"
-                    alt="Imagen de Youtube"></a>
-        </footer>
-    </body>
+            </div><!-- End Sub Footer -->
 
-    </html>
+        </div>
+    </div><!-- End Footer -->
+
+    <!-- Scroll to Top -->
+    <div id="toTop" class="hidden-phone hidden-tablet">Back to Top</div>
+
+</div>
+    </div></body>
+</html>
+
+

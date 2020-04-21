@@ -2,23 +2,51 @@
 
 
 {% block contenido %}
-<table>
-    <tr>
-        <td>ID</td>
-        <td>{{ cliente.id }}</td>
-    </tr>
-    <tr>
-        <td>CIF</td>
-        <td>{{ cliente.cif }}</td>
-    </tr>
-    <tr>
-        <td>Nombre Empresa</td>
-        <td>{{ cliente.nombre_empresa }}</td>
-    </tr>
-    <tr>
-        <td>Datos Contacto</td>
-        <td>{{ cliente.datos_contacto }}</td>
-    </tr>
 
-</table>
+    <div class="row">
+
+        <!-- Gallery Items
+        ================================================== -->
+        <div class="span12 gallery-single">
+
+            <div class="row">
+                <div class="span6">
+                    <img src="https://w7.pngwing.com/pngs/709/271/png-transparent-computer-icons-user-computer-icons-avatar-black-desktop-wallpaper-symbol.png" class="align-left thumbnail" alt="image">
+                </div>
+                <div class="span6">
+                    <h2>Custom Illustration</h2>
+                    <p class="lead">For an international ad campaign. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie. Vivamus tincidunt sem eu magna varius elementum. Maecenas felis tellus, fermentum vitae laoreet vitae, volutpat et urna. Nulla faucibus ligula eget ante varius ac euismod odio placerat. Nam sit amet felis non lorem faucibus rhoncus vitae id dui.</p>
+
+                    <ul class="project-info">
+                        <table>
+                            <tr>
+                                <td>ID</td>
+                                <td>{{ cliente.id }}</td>
+                            </tr>
+                            <tr>
+                                <td>CIF</td>
+                                <td>{{ cliente.cif }}</td>
+                            </tr>
+                            <tr>
+                                <td>Nombre Empresa</td>
+                                <td>{{ cliente.nombre_empresa }}</td>
+                            </tr>
+                            <tr>
+                                <td>Datos Contacto</td>
+                                <td>{{ cliente.datos_contacto }}</td>
+                            </tr>
+                        </table>
+                    </ul>
+
+                    <button class="btn btn-inverse pull-left" type="button">Visit Website</button>
+                    <a href="#" class="pull-right"><i class="icon-arrow-left"></i>Back to Gallery</a>
+                </div>
+            </div>
+
+        </div><!-- End gallery-single-->
+    </div>
+
+
 {% endblock %}
+

@@ -2,34 +2,13 @@
 
 {% block contenido %}
 
-<form action="{% url 'componente_create' %}" method="post">
-    {% csrf_token %}
+<form method="POST">
     <div class="div">
         <h2>{{ titulo_pagina }}</h2>
-        <div>
-           <strong>Codigo Referencia:</strong>
-            <br>
-            <input type="text" name="codigo_referencia" >
-        </div>
-        <br>
-        <div>
-           <strong>Nombre Modelo:</strong>
-            <br>
-            <input type="text" name="nombre_modelo" >
-        </div>
-        <br>
-        <div>
-           <strong>Marca:</strong>
-            <br>
-            <input type="text" name="marca" >
-        </div>
-        <br>
-        <br>
-        <div>
-            <input type="submit" value="Añadir Componente" />
-        </div>
+    {{ form.as_p }}
+    {% csrf_token %}
+    <button type="submit">Añadir</button>
     </div>
 </form>
-<br>
 
 {% endblock %}
