@@ -3,17 +3,29 @@
 
 {% block contenido %}
 
-<ul class="visualizar">
     {% for ped in lista_pedidos %}
-    <li class="visualizar1">
-        {{ ped.codigo_referencia }}: {{ ped.fecha }}-----> {{  ped.cliente }}
-        <a href="edit/{{ ped.id }}">Editar</a>
+
+    <li  class="span3 gallery-item" data-id="id-1" data-type="illustration">
+        <ul class="element">
+            <br>
+            <li> CODIGO DE REFERENCIA:{{ ped.codigo_referencia }}</li>
+            <br>
+            <li> FECHA:{{ ped.fecha }} </li>
+            <br>
+            <li> CLIENTE:{{  ped.cliente }}</li>
+            <br>
+        </ul>
+
+        <br>
+
+        <a href="edit/{{ ped.id }}"><button>Editar</button></a>
         <a href="delete/{{ ped.id }}"
-          onClick="return confirm('¿Seguro que quieres borrar el pedido: {{ped.codigo_referencia}}?');">
-            Borrar
+           onClick="return confirm('¿Seguro que quieres borrar los datos de: {{ped.codigo_referencia}}?');">
+            <button>Borrar</button>
         </a>
-        <a href="/../appProject/pedido/{{ ped.id }}">Ver</a>
+        <a href="/../appProject/cliente/{{ ped.id }}"><button>Ver</button></a>
     </li>
+
     {% endfor %}
-</ul>
+
 {% endblock %}
