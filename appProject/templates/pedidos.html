@@ -18,12 +18,12 @@
 
         <br>
 
-        <a href="edit/{{ ped.id }}"><button>Editar</button></a>
+        <a href="edit/{{ ped.id }}"><button class="separacionbottom">Editar</button></a>
         <a href="delete/{{ ped.id }}"
            onClick="return confirm('¿Seguro que quieres borrar los datos de: {{ped.codigo_referencia}}?');">
-            <button>Borrar</button>
+            <button class="separacionbottom">Borrar</button>
         </a>
-        <a href="/../appProject/pedido/{{ ped.id }}"><button>Ver</button></a>
+        <a href="/../appProject/pedido/{{ ped.id }}"><button class="separacionbottom">Ver</button></a>
     </li>
 
     {% endfor %}

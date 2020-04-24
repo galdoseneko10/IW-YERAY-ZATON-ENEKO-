@@ -118,7 +118,7 @@ class CreatePedidosView(View):
         print(request.POST.getlist('poducto_solicitado[]'))
 
         if form.is_valid():
-
+        
 
             form.save()
             return redirect('pedidos')

@@ -18,11 +18,11 @@
             <td>{{com.codigo_referencia}}</td>
             <td>{{ com.nombre_modelo }}</td>
             <td>{{  com.marca }}</td>
-            <td> <a href="edit/{{ com.id }}"><button>Editar</button></a>
+            <td> <a href="edit/{{ com.id }}"><button class="separacionbottom">Editar</button></a>
             <a href="delete/{{ com.id }}" onClick="return confirm('¿Seguro que quieres borrar a {{com.nombre_modelo}}?');">
-                <button>Borrar</button>
+                <button class="separacionbottom">Borrar</button>
             </a>
-            <a href="/../appProject/componente/{{ com.id }}"><button>Ver</button></a></td>
+            <a href="/../appProject/componente/{{ com.id }}"><button class="separacionbottom">Ver</button></a></td>
         </tr>
 
         {% endfor %}
