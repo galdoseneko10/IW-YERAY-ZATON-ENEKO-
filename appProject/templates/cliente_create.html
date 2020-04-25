@@ -5,9 +5,11 @@
 <form method="POST">
     <div class="div">
         <h2>{{ titulo_pagina }}</h2>
-    {{ form.as_p }}
-    {% csrf_token %}
-    <button type="submit">Añadir</button>
+        <div class="btncrear">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <button type="submit">Añadir</button>
+            </div>
     </div>
 </form>
 

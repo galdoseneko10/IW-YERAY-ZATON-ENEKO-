@@ -11,10 +11,7 @@ body {background: #f9f9f9 url(https://i.pinimg.com/originals/8f/98/49/8f9849d736
 	min-height: 100%;
 }
 
-@media (max-width: 767px) {
-  body { padding-right: 0px; padding-left: 0px; }
-  .container {margin-right: 20px; margin-left: 20px;}
- }
+
 
 /***** Titles and Headings *****/
 h1, h2, h3, h4 , h5, h6 {
@@ -23,7 +20,7 @@ h1, h2, h3, h4 , h5, h6 {
 	text-transform:uppercase;
 
 }	
-h1, h2, h3, h4, h5 {text-shadow: 1px 1px 0 #fdfdfd, 2px 2px 0 rgba(81, 81, 81, 0.5), 0 0 1px #fdfdfd;}
+h1, h2, h3, h4, h5 {text-shadow: 1px 1px 0 #fdfdfd, 2px 2px 0 rgba(81, 81, 81, 0.5), 0 0 1px #fdfdfd; text-align:center;}
 h1.title-bg, h2.title-bg, h3.title-bg, h4.title-bg , h5.title-bg, h6.title-bg {
 	background:#f8f8f8; 
 	padding:10px 5px;
@@ -42,11 +39,10 @@ h5.title-bg button {
 }
 
 /***** Links *****/
-a, a:hover { color:#d8450b; }
 
 /***** Misc *****/
 i {margin-right: 3px;}
-p {margin-bottom: 20px;}
+p {margin-bottom: 20px; }
 blockquote {
 	font-size:16px; 
 	line-height:24px; 
@@ -315,13 +311,14 @@ p.side {margin-bottom: 20px;}
 	clear: both;
  	position: relative;
  	z-index: 10;
+ 	margin-top:40px;
 }
 .footer-row { margin-top: 30px;}
-.footer-col {color:#ababab; font-size: 11px; padding-left:20px}
+.footer-col {color:#ababab; font-size: 11px; padding-left:7h0px}
 .footer-col a {color:#dcdcdc; font-weight: bold;}
 .footer-col a:hover {color:#d8450b; text-decoration: none;}
 .footer-col h5, .footer-col strong {color:#f9f9f9; text-shadow:none;}
-.footer-col h5 {margin-bottom: 25px;}
+.footer-col h5 {margin-bottom: 25px; font-size:18px;}
 .footer-col ul {margin: 0px;}
 .footer-col ul li {list-style: none; padding-bottom: 20px;}
 .footer-col ul.post-list li {
@@ -378,4 +375,145 @@ a.accordion-toggle{background: #f5f5f5;}
 
 .separacionbottom{
     margin-left:25px;
+}
+
+.separacionfooter{
+    padding-left:100px;
+}
+.divpedido{
+    background-image: url("https://www.hdfondos.org/file/23415/728x410/16:9/componentes-electronicos_2147046004.jpg");
+    width:100%;
+    height: 300px;
+    margin-top:30px;
+    opacity:0.7;
+}
+
+.btnpedido{
+   margin-top:125px;
+   margin-left:480px;
+   padding:18px;
+   font-size: 18px;
+   background: #f9f9f9 url(https://i.pinimg.com/originals/8f/98/49/8f9849d736b3b28300eeaeeb81dea917.jpg);
+}
+
+.btncrear{
+    text-align:center;
+    padding-top:30px;
+}
+
+
+.carousel {
+    position: relative;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+    margin-top: 26px;
+}
+
+.carousel-inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-open:checked + .carousel-item {
+    position: static;
+    opacity: 100;
+}
+
+.carousel-item {
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+}
+
+.carousel-item img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.carousel-control {
+    background: rgba(0, 0, 0, 0.28);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    font-size: 40px;
+    height: 40px;
+    line-height: 35px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    cursor: pointer;
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    text-align: center;
+    width: 40px;
+    z-index: 10;
+}
+
+.carousel-control.prev {
+    left: 2%;
+}
+
+.carousel-control.next {
+    right: 2%;
+}
+
+.carousel-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #aaaaaa;
+}
+
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
+    display: block;
+}
+
+.carousel-indicators {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.carousel-bullet {
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 35px;
+}
+
+.carousel-bullet:hover {
+    color: #aaaaaa;
+}
+
+#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+    color: #428bca;
+}
+
+#title {
+    width: 100%;
+    position: absolute;
+    padding: 0px;
+    margin: 0px auto;
+    text-align: center;
+    font-size: 27px;
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Open Sans', sans-serif;
+    z-index: 9999;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), -1px 0px 2px rgba(255, 255, 255, 0);
 }

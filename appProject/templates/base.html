@@ -8,6 +8,9 @@
         <link href= "{% static 'custom-styles.css' %}" rel="stylesheet">
         <meta charset="UTF-8">
 
+
+
+
 </head>
 
 <body class="home">
@@ -21,7 +24,7 @@
         <div class="span5 logo">
         	<a href="/../appProject/paginaprincipal.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/DC_Comics_logo.svg/1200px-DC_Comics_logo.svg.png"
                 width="80px" alt="" /></a>
-            <h5>Deustronic Components S.L</h5>
+            <h5><a href="/../appProject/paginaprincipal.html">Deustronic Components S.L</a></h5>
         </div>
 
         <!-- Main Navigation
@@ -66,72 +69,66 @@
 
 
             <div>
-                <div class="separacion">
                     <!-- Tabla resumida de incidencias en la pagina principal -->
                         {% block contenido %}{% endblock %}
-                </div>
-
-                  <!-- Footer Area
-        ================================================== -->
-                <div class="footer-container"><!-- Begin Footer -->
+            </div>
+    </div>
+        <div class="footer-container"><!-- Begin Footer -->
     	<div class="container">
         	<div class="row footer-row">
                 <div class="span3 footer-col">
-                    <h5>About Us</h5>
-                   <img src="img/piccolo-footer-logo.png" alt="Piccolo" /><br /><br />
+                    <h5>Sobre Nosotros</h5>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/DC_Comics_logo.svg/1200px-DC_Comics_logo.svg.png" width="50px" alt="Deustronic Components" /><br /><br />
                     <address>
-                        <strong>Dc</strong><br />
-                        123 Main St, Suite 500<br />
-                        New York, NY 12345<br />
+                        <strong>Deustronic Components S.L</strong><br />
+                        España, Vitoria-Gasteiz<br />
+                        C/ Domingo Beltran, 7<br /><br>
+                        945728465 / 682763475<br />
                     </address>
 
-            <!-- logo instagram, facebook y eso con link a sus paginas -->
-            <a href="https://www.instagram.com/?hl=es"><img width="30px" title="Pincha para accerder a Instagram"
-                    src="https://upload.wikimedia.org/wikipedia/commons/5/58/Instagram-Icon.png"
-                    alt="Imagen de Instagram"></a>
-            <a href="https://de-de.facebook.com/"><img width="30px" title="Pincha para accerder a Facebook"
-                    src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
-                    alt="Imagen de Facebook"></a>
-            <a href="https://twitter.com/?lang=de"><img width="30px" title="Pincha para accerder a Twitter"
-                    src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/twitter_circle_color-512.png"
-                    alt="Imagen de Twitter"></a>
-            <a href="https://www.youtube.com/?gl=DE"><img width="30px" title="Pincha para accerder a YouTube"
-                    src="https://images.vexels.com/media/users/3/137425/isolated/preview/f2ea1ded4d037633f687ee389a571086-youtube-icon-logo-by-vexels.png"
-                    alt="Imagen de Youtube"></a>
-
+                    <!-- logo instagram, facebook y eso con link a sus paginas -->
+                    <a href="https://www.instagram.com/?hl=es"><img width="30px" title="Pincha para accerder a Instagram"
+                        src="https://upload.wikimedia.org/wikipedia/commons/5/58/Instagram-Icon.png"
+                        alt="Imagen de Instagram"></a>
+                    <a href="https://de-de.facebook.com/"><img width="30px" title="Pincha para accerder a Facebook"
+                        src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
+                        alt="Imagen de Facebook"></a>
+                    <a href="https://twitter.com/?lang=de"><img width="35px" title="Pincha para accerder a Twitter"
+                        src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/twitter_circle_color-512.png"
+                        alt="Imagen de Twitter"></a>
+                    <a href="https://www.youtube.com/?gl=DE"><img width="35px" title="Pincha para accerder a YouTube"
+                        src="https://images.vexels.com/media/users/3/137425/isolated/preview/f2ea1ded4d037633f687ee389a571086-youtube-icon-logo-by-vexels.png"
+                        alt="Imagen de Youtube"></a>
                 </div>
                 <div class="span3 footer-col">
-                    <h5>Latest Posts</h5>
+                    <h5>Ultimas Opiniones</h5>
+                    <ul>
+                        <li><strong>enekogaldos:</strong> Perfecto el trato y la calidad de sus productos!!</li>
+                        <li><strong>jonzaton:</strong> En tan solo 4 dias ya tenia mi nuevo ordenador en casita, un trabajador acudio a mi casa a resolver los problemas de montaje. Unos fenómenos!</li>
+                        <li><strong>yeraylamelas:</strong> No dudare en volver a comprar en esta tienda, increible trato y sobre todo calidad de los productos.</li>
+                    </ul>
+                </div>
+                <div class="span3 footer-col">
+                    <h5>Colaboradores</h5>
                      <ul class="post-list">
-                        <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-                        <li><a href="#">Consectetur adipiscing elit est lacus gravida</a></li>
-                        <li><a href="#">Lectus sed orci molestie molestie etiam</a></li>
-                        <li><a href="#">Mattis consectetur adipiscing elit est lacus</a></li>
+                        <li class="centrarcol"><a href="https://eshop.asus.com/es-ES/landing?gclid=EAIaIQobChMIiovh-fiD6QIVi8reCh16DAOiEAAYASAAEgKrW_D_BwE" title="Pagina oficial ASUS">ASUS</a></li>
+                        <li class="centrarcol"><a href="https://es.msi.com/" title="Pagina oficial MSI">MSI</a></li>
+                        <li class="centrarcol"><a href="https://www.acer.com/ac/es/ES/content/home" title="Pagina oficial ACER">ACER</a></li>
+                        <li class="centrarcol"><a href="http://es.gigabyte.com/" title="Pagina oficial GIGABYTE">GIGABYTE</a></li>
+                        <li class="centrarcol"><a href="https://www.apple.com/es/" title="Pagina oficial APPLE">APPLE</a></li>
                     </ul>
                 </div>
                 <div class="span3 footer-col">
-                    <h5>Flickr Photos</h5>
-                    <ul class="img-feed">
-                        <li><a href="#"><img src="" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                    </ul>
+                    <h5>UBICACIÓN</h5>
+                        <iframe width="285px" height="200px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2925.0611398753945!2d-2.680173884894288!3d42.85044217915701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4fc26acee7b6db%3A0xdcee180d09adac21!2sCalle%20Domingo%20Beltran%2C%207%2C%2001012%20Vitoria-Gasteiz%2C%20%C3%81lava!5e0!3m2!1ses!2ses!4v1587830853621!5m2!1ses!2ses" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
                 </div>
             </div>
 
             <div class="row"><!-- Begin Sub Footer -->
                 <div class="span12 footer-col footer-sub">
                     <div class="row no-margin">
-                        <div class="span6"><span class="left">Copyright 2020 Deustronic Theme. All rights reserved.</span></div>
+                        <div class="span6"><span class="left">Copyright 2020 Deustronic Components Theme. All rights reserved.</span></div>
                         <div class="span6">
                             <span class="right">
                             <a href="/../appProject/paginaprincipal.html">Home</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="/../appProject/productos">Productos</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="/../appProject/componentes">Componentes</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="/../appProject/clientes">Clientes</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="/../appProject/pedidos">Pedidos</a>
@@ -143,12 +140,5 @@
 
         </div>
     </div><!-- End Footer -->
-
-    <!-- Scroll to Top -->
-    <div id="toTop" class="hidden-phone hidden-tablet">Back to Top</div>
-
-</div>
-    </div></body>
+</body>
 </html>
-
-

@@ -1,18 +1,33 @@
 {% extends "base.html" %}
 
 
-{% block contenido %}
-<ul li  class="span3 gallery-item" data-id="id-1" data-type="illustration">
+{% block contenido %}  <h2>{{ titulo_pagina }}</h2>
+
+
+
     {% for pro in lista_productos %}
-    <li class="visualizar1">
-        {{ pro.id }}: {{ pro.nombre }}-----> {{  pro.precio }}$
-        <a href="edit/{{ pro.id }}">Editar</a>
+
+    <li  class="span3 gallery-item" data-id="id-1" data-type="illustration">
+        <ul class="element">
+            <br>
+            <li> REFERENCIA:{{ pro.referencia }}</li>
+            <br>
+            <li> NOMBRE:{{ pro.nombre }} </li>
+            <br>
+            <li> PRECIO:{{  pro.precio }}$</li>
+            <br>
+        </ul>
+
+        <br>
+
+        <a href="edit/{{ pro.id }}"><button class="separacionbottom">Editar</button></a>
         <a href="delete/{{ pro.id }}"
-          onClick="return confirm('¿Seguro que quieres borrar el producto: {{pro.nombre}}?');">
-            Borrar
+           onClick="return confirm('¿Seguro que quieres borrar los datos de: {{pro.nombre}}?');">
+            <button class="separacionbottom">Borrar</button>
         </a>
-        <a href="/../appProject/producto/{{ pro.id }}">Ver</a>
+        <a href="/../appProject/producto/{{ pro.id }}"><button class="separacionbottom">Ver</button></a>
     </li>
+
     {% endfor %}
-</ul>
+
 {% endblock %}
