@@ -78,7 +78,7 @@
   [class*="span"] {
     float: left;
     min-height: 1px;
-    margin-left: 25px;
+    margin-left: 10px;
   }
   .container,
   .navbar-static-top .container,
@@ -109,7 +109,7 @@
     width: 570px;
   }
   .span5 {
-    width: 470px;
+    width: 505px;
   }
   .span4 {
     width: 370px;

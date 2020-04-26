@@ -15,12 +15,22 @@ body {background: #f9f9f9 url(https://i.pinimg.com/originals/8f/98/49/8f9849d736
 
 /***** Titles and Headings *****/
 h1, h2, h3, h4 , h5, h6 {
-	font-family: "Oswald", sans-serif; 
+    font-family: 'Quicksand', sans-serif;
 	font-weight: normal;
 	text-transform:uppercase;
+	font-weight: bold;
 
-}	
-h1, h2, h3, h4, h5 {text-shadow: 1px 1px 0 #fdfdfd, 2px 2px 0 rgba(81, 81, 81, 0.5), 0 0 1px #fdfdfd; text-align:center;}
+}
+
+h5{
+   font-family: 'Quicksand', sans-serif;
+	font-weight: normal;
+	text-transform:uppercase;
+	font-size: 26px;
+    font-weight: bold;
+}
+
+h1, h2, h3, h4, h5 {text-align:center;}
 h1.title-bg, h2.title-bg, h3.title-bg, h4.title-bg , h5.title-bg, h6.title-bg {
 	background:#f8f8f8; 
 	padding:10px 5px;
@@ -57,13 +67,13 @@ blockquote.pull-right {border-right: 5px solid #999;}
 / Header
 **************************************/
 .logo { margin-top:40px; }
-.logo img { padding-right:20px; }
+.logo img { padding-right:20px; padding-bottom:20px; }
 .logo h5 { display: inline-block; }
 .headline { margin-bottom:20px; }
 
 
 
-.navigation { margin-top:40px; }
+.navigation { margin-top:50px; }
 .navigation .navbar {
 	float:right; background:#f8f8f8;
 	border-bottom: 1px dotted #a9a9a9;
@@ -338,7 +348,7 @@ ul.img-feed li {
 /**************************************
 / MISC
 **************************************/
-.row {margin-bottom:40px;}
+.row {margin-bottom:40px; margin-top:30px;}
 .sub-row30 {margin-bottom:30px;}
 .sub-row20 {margin-bottom:20px;}
 .no-margin {margin-bottom:0px;}

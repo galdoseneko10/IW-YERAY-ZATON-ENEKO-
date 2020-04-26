@@ -163,9 +163,11 @@ body {
 }
 
 a {
-  color: #3342ff;
-  text-decoration: none;
+    color: #3342ff;
+    text-decoration: none;
+
 }
+
 
 a:hover {
   text-decoration: underline;
@@ -507,6 +509,10 @@ button,
 select,
 textarea {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border-radius: 10px;
+  padding: .45rem .75rem;
+  align-items: center;
+  justify-content: center;
 }
 
 label {
@@ -774,6 +780,6 @@ tr:hover td{
 }
 
 .classtr:hover{
-background-color: #3380FF;
+background-color: #A1A4A3;
 color: white;
 }
