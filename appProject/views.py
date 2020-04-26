@@ -180,7 +180,7 @@ class CreateClienteView(View):
         form = ClienteForm()
         context = {
             'form': form,
-            'titulo_pagina': 'Añadir nuevo Cliente'
+            'titulo_pagina': 'Crear nuevo Cliente'
         }
         return render(request, 'cliente_create.html', context)
 
