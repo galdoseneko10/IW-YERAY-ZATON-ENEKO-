@@ -67,7 +67,7 @@ blockquote.pull-right {border-right: 5px solid #999;}
 / Header
 **************************************/
 .logo { margin-top:40px; }
-.logo img { padding-right:20px; padding-bottom:20px; }
+.logo img {padding-bottom:20px; }
 .logo h5 { display: inline-block; }
 .headline { margin-bottom:20px; }
 
@@ -342,7 +342,7 @@ ul.img-feed li {
 }
 /**** Sub Footer ****/
 .footer-sub {background: #1f1f1f; padding: 10px 0px;}
-.footer-sub div div span {padding: 0px 20px;}
+.footer-sub div div span {padding: 0px 30px;}
 
 
 /**************************************

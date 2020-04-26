@@ -3,9 +3,13 @@
 {% block contenido %}
 
 <form method="POST">
-    {{ form.as_p }}
-    {% csrf_token %}
-    <button type="submit">Editar</button>
+    <div class="div">
+        <h2></h2>
+        <div class="btncrear">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <button type="submit">Editar</button>
+            </div>
     </div>
 </form>
 
