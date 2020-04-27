@@ -93,6 +93,7 @@ class PedidosListView(ListView):
 class PedidoDetailView(DetailView):
     model = Pedido
     template_name = 'pedido.html'
+    context_object_name = 'lista_pedido'
 
     def get_context_data(self, **kwargs):
         context = super(PedidoDetailView, self).get_context_data(**kwargs)
@@ -118,8 +119,6 @@ class CreatePedidosView(View):
         print(request.POST.getlist('poducto_solicitado[]'))
 
         if form.is_valid():
-        
-
             form.save()
             return redirect('pedidos')
 
