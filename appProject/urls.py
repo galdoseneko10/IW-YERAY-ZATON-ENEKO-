@@ -3,7 +3,7 @@ from . import views
 
 urlpatterns = [
     path('productos/', views.ProductosListView.as_view(), name='productos'),
-    path('producto/<int:pk>/', views.ProductoDetailView.as_view(), name='producto'),
+    path('producto/<int:producto_id>/', views.producto, name='producto'),
     path('producto/create/', views.CreateProductoView.as_view(), name='producto_create'),
     path('productos/delete/<int:producto_id>/', views.delete_producto, name='producto_delete'),
     path('productos/edit/<int:producto_id>/', views.edit_producto, name='producto_edit'),
@@ -18,9 +18,10 @@ urlpatterns = [
     path('componentes/delete/<int:componente_id>/', views.delete_componente, name='componente_delete'),
     path('componentes/edit/<int:componente_id>/', views.edit_componente, name='componente_edit'),
     path('pedidos/', views.PedidosListView.as_view(), name='pedidos'),
-    path('pedido/<int:pk>/', views.PedidoDetailView.as_view(), name='pedido'),
+    path('pedido/<int:pedido_id>/', views.pedido, name='pedido'),
     path('pedido/create/', views.CreatePedidosView.as_view(), name='pedido_create'),
     path('pedidos/delete/<int:pedido_id>/', views.delete_pedido, name='pedido_delete'),
     path('pedidos/edit/<int:pedido_id>/', views.edit_pedido, name='pedido_edit'),
-    path('paginaprincipal.html', views.paginaprincipal, name='pagprincipal')
+    path('paginaprincipal.html', views.paginaprincipal, name='pagprincipal'),
+
 ]

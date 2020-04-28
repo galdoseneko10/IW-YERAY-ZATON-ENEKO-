@@ -1,6 +1,6 @@
 from appProject.forms import ProductoForm, PedidoForm, ClienteForm, ComponenteForm
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView, DetailView
 
 from appProject.models import Producto, Cliente, Componente
@@ -21,14 +21,11 @@ class ProductosListView(ListView):
         return context
 
 
-class ProductoDetailView(DetailView):
-    model = Producto
-    template_name = 'producto.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(ProductoDetailView, self).get_context_data(**kwargs)
-        context['titulo_pagina'] = 'Detalles del Producto'
-        return context
+def producto(request, producto_id):
+    producto = get_object_or_404(Producto, id=producto_id)
+    tipo_componente =  producto.tipo_componente.all()
+    context = { 'producto': producto, 'tipo_componente' : tipo_componente }
+    return render(request, 'producto.html', context)
 
 class CreateProductoView(View):
     def get(self, request, *args, **kwargs):
@@ -90,15 +87,11 @@ class PedidosListView(ListView):
         return context
 
 
-class PedidoDetailView(DetailView):
-    model = Pedido
-    template_name = 'pedido.html'
-    context_object_name = 'lista_pedido'
-
-    def get_context_data(self, **kwargs):
-        context = super(PedidoDetailView, self).get_context_data(**kwargs)
-        context['titulo_pagina'] = 'Detalles del Pedido'
-        return context
+def pedido(request, pedido_id):
+    pedido = get_object_or_404(Pedido, pk=pedido_id)
+    producto_solicitado =  pedido.producto_solicitado.all()
+    context = { 'pedido': pedido, 'producto_solicitado' : producto_solicitado }
+    return render(request, 'pedido.html', context)
 
 
 class CreatePedidosView(View):
@@ -293,3 +286,4 @@ def edit_componente(request, componente_id):
 
 def paginaprincipal(request):
     return render(request,"paginaprincipal.html")
+

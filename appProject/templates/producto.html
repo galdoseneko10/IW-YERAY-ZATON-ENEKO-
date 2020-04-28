@@ -39,7 +39,11 @@
                             </tr>
                             <tr>
                                 <td>Tipo Componente</td>
-                                <td>{{ producto.tipo_componente }}</td>
+                                <td>
+                                    {% for tp in tipo_componente %}
+                                            <ul>- {{ tp.nombre_modelo}}</ul>
+                                    {% endfor %}
+                                </td>
                             </tr>
                         </table>
                     </ul>

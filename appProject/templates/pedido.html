@@ -35,9 +35,11 @@
                             </tr>
                             <tr>
                                 <td>Producto</td>
-                                {% for prod in pedidos.lista_productos %}
-                                <td>{{ prod.nombre }}</td>
-                                {% endfor %}
+                                <td>
+                                    {% for ps in producto_solicitado %}
+                                            <ul>- {{ ps.nombre}}</ul>
+                                        {% endfor %}
+                                </td>
                             </tr>
                             <tr>
                                 <td>Cantidad</td>
