@@ -12,6 +12,10 @@ class PedidoForm(forms.ModelForm):
     class Meta:
         model = Pedido
         fields = '__all__'
+        widgets = {
+        'fecha': forms.DateInput(format=('%m/%d/%Y'), attrs={'class':'form-control', 'placeholder':'Select a date', 'type':'date'}),
+    }
+
 
 class ClienteForm(forms.ModelForm):
     class Meta:
