@@ -25,6 +25,7 @@ def producto(request, producto_id):
     producto = get_object_or_404(Producto, id=producto_id)
     tipo_componente =  producto.tipo_componente.all()
     context = { 'producto': producto, 'tipo_componente' : tipo_componente }
+    context['titulo_pagina'] = 'Detalles del Producto'
     return render(request, 'producto.html', context)
 
 class CreateProductoView(View):
@@ -86,13 +87,12 @@ class PedidosListView(ListView):
         context['titulo_pagina'] = 'Pedidos'
         return context
 
-
 def pedido(request, pedido_id):
     pedido = get_object_or_404(Pedido, pk=pedido_id)
     producto_solicitado =  pedido.producto_solicitado.all()
     context = { 'pedido': pedido, 'producto_solicitado' : producto_solicitado }
+    context['titulo_pagina'] = 'Detalles del Pedido'
     return render(request, 'pedido.html', context)
-
 
 class CreatePedidosView(View):
     def get(self, request, *args, **kwargs):
