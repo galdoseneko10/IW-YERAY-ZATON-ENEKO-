@@ -87,6 +87,8 @@ class PedidosListView(ListView):
         context['titulo_pagina'] = 'Pedidos'
         return context
 
+
+
 def pedido(request, pedido_id):
     pedido = get_object_or_404(Pedido, pk=pedido_id)
     producto_solicitado =  pedido.producto_solicitado.all()
