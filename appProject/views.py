@@ -93,8 +93,7 @@ class PedidosListView(ListView):
 def pedido(request, pedido_id):
     pedido = get_object_or_404(Pedido, pk=pedido_id)
     producto_solicitado =  pedido.producto_solicitado.all()
-    precio_total = pedido.producto_solicitado.all().aggregate(Sum('precio'))
-    context = { 'pedido': pedido, 'producto_solicitado' : producto_solicitado, 'precio_total' :precio_total }
+    context = { 'pedido': pedido, 'producto_solicitado' : producto_solicitado}
     context['titulo_pagina'] = 'Detalles del Pedido'
     return render(request, 'pedido.html', context)
 

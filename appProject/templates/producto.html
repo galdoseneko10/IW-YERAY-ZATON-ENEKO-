@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{%load static %}
 
 
 {% block contenido %}
@@ -11,7 +12,7 @@
 
             <div class="row">
                 <div class="span6">
-                    <img src="https://img2.freepng.es/20180528/fwc/kisspng-laptop-computer-icons-computer-monitors-icon-computer-5b0c390bd715a8.196249491527527691881.jpg" class="align-left thumbnail" alt="image">
+                    <img src="{% static 'img/iconoproducto.png' %}" class="align-left thumbnail" alt="image">
                 </div>
                 <div class="span6">
                     <h2>{{ titulo_pagina }}</h2>

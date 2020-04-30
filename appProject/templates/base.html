@@ -6,10 +6,8 @@
         <link href= "{% static 'bootstrap.css' %}" rel="stylesheet">
         <link href= "{% static 'bootstrap-responsive.css' %}" rel="stylesheet">
         <link href= "{% static 'custom-styles.css' %}" rel="stylesheet">
+
         <meta charset="UTF-8">
-
-
-
 
 </head>
 
@@ -64,17 +62,13 @@
             </ul>
             </div>
         </div>
-
       </div>
-
-
-            <div>
-                    <!-- Tabla resumida de incidencias en la pagina principal -->
-                        {% block contenido %}{% endblock %}
-            </div>
+        <div>
+            {% block contenido %}{% endblock %}
+        </div>
     </div>
-        <div class="footer-container"><!-- Begin Footer -->
-    	<div class="container">
+    <div class="footer-container"><!-- Begin Footer -->
+        <div class="container">
         	<div class="row footer-row">
                 <div class="span3 footer-col">
                     <h5>Sobre Nosotros</h5>
@@ -137,7 +131,6 @@
                     </div>
                 </div>
             </div><!-- End Sub Footer -->
-
         </div>
     </div><!-- End Footer -->
 </body>
