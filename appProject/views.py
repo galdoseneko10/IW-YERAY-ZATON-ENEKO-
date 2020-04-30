@@ -6,6 +6,7 @@ from django.views.generic import ListView, DetailView
 from appProject.models import Producto, Cliente, Componente
 from appProject.models import Pedido
 from django.views.generic.base import View
+from django.db.models import Sum
 
 
 
@@ -92,7 +93,8 @@ class PedidosListView(ListView):
 def pedido(request, pedido_id):
     pedido = get_object_or_404(Pedido, pk=pedido_id)
     producto_solicitado =  pedido.producto_solicitado.all()
-    context = { 'pedido': pedido, 'producto_solicitado' : producto_solicitado }
+    precio_total = pedido.producto_solicitado.all().aggregate(Sum('precio'))
+    context = { 'pedido': pedido, 'producto_solicitado' : producto_solicitado, 'precio_total' :precio_total }
     context['titulo_pagina'] = 'Detalles del Pedido'
     return render(request, 'pedido.html', context)
 
@@ -111,7 +113,6 @@ class CreatePedidosView(View):
 
     def post(self, request, *args, **kwargs):
         form = PedidoForm(request.POST)
-        print(request.POST.getlist('poducto_solicitado[]'))
 
         if form.is_valid():
             form.save()

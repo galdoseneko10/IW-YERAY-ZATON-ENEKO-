@@ -25,7 +25,7 @@ class Producto(models.Model):
     tipo_componente = models.ManyToManyField(Componente)
 
     def __str__(self):
-        return self.nombre
+        return {self.nombre}
 
 #CLIENTE
 class Cliente(models.Model):
