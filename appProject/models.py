@@ -1,15 +1,13 @@
 from django.db import models
 
-
 # Create your models here.
-
 
 
 # COMPONENTES
 class Componente(models.Model):
     codigo_referencia = models.IntegerField()
-    nombre_modelo = models.CharField(max_length=50)
-    marca = models.CharField(max_length=50)
+    nombre_modelo = models.CharField(max_length=20)
+    marca = models.CharField(max_length=20)
 
     def __str__(self):
         return self.nombre_modelo
@@ -17,11 +15,11 @@ class Componente(models.Model):
 
 # PRODUCTOS
 class Producto(models.Model):
-    referencia = models.CharField(max_length=50)
+    referencia = models.CharField(max_length=20)
     precio = models.FloatField()
-    nombre = models.CharField(max_length=50)
-    descripcion = models.CharField(max_length=100)
-    categoria = models.CharField(max_length=50)
+    nombre = models.CharField(max_length=20)
+    descripcion = models.CharField(max_length=50)
+    categoria = models.CharField(max_length=20)
     tipo_componente = models.ManyToManyField(Componente)
 
     def __str__(self):
@@ -29,9 +27,9 @@ class Producto(models.Model):
 
 #CLIENTE
 class Cliente(models.Model):
-    cif = models.CharField(max_length=50)
-    nombre_empresa = models.CharField(max_length=50)
-    datos_contacto = models.CharField(max_length=50)
+    cif = models.CharField(max_length=10)
+    nombre_empresa = models.CharField(max_length=20)
+    datos_contacto = models.CharField(max_length=20)
 
     def __str__(self):
         return self.nombre_empresa
@@ -39,7 +37,7 @@ class Cliente(models.Model):
 
 # PEDIDO
 class Pedido(models.Model):
-    codigo_referencia = models.CharField(max_length=50)
+    codigo_referencia = models.CharField(max_length=10)
     fecha = models.DateField()
     datos_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
     producto_solicitado = models.ManyToManyField(Producto)
