@@ -2,6 +2,9 @@ from appProject.forms import ProductoForm, PedidoForm, ClienteForm, ComponenteFo
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView, DetailView
+from django.template.loader import get_template
+from django.core.mail import EmailMultiAlternatives
+from django.conf import settings
 
 from appProject.models import Producto, Cliente, Componente
 from appProject.models import Pedido
@@ -286,6 +289,25 @@ def edit_componente(request, componente_id):
     return render(request, "componente_edit.html", {'form': form})
 
 
-def paginaprincipal(request):
-    return render(request,"paginaprincipal.html")
+def send_email (mail, nombre):
+    context = {'mail' : mail, 'nombre' : nombre}
+    template = get_template('textocorreo.html')
+    content = template.render(context)
 
+    email = EmailMultiAlternatives(
+        '¡¡¡SORTEO!!! ORDENADOR MSI',
+        'Correo Sorteo',
+        settings.EMAIL_HOST_USER,
+        [mail],
+    )
+    email.attach_alternative(content, 'text/html')
+    email.send()
+
+
+def paginaprincipal(request):
+    if request.method == 'POST':
+        mail = request.POST.get('mail')
+        nombre = request.POST.get('nombre')
+        send_email(mail, nombre)
+
+    return render(request, 'paginaprincipal.html')
