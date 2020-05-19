@@ -330,3 +330,9 @@ def borrar_api (req):
     componente.delete()
     return HttpResponse("ok")
 
+@method_decorator(csrf_exempt, name='dispatch')
+def formulario_api (req):
+    form = ClienteForm(req.POST)
+    if form.is_valid():
+        form.save()
+    return HttpResponse("ok")

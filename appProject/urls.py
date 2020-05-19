@@ -25,6 +25,7 @@ urlpatterns = [
     path('', views.paginaprincipal, name='pagprincipal'),
     path('pedidos/api', views.pedidos_api, name='pedidos_api'),
     path('componentes/borrar/api', views.borrar_api, name='pedidos_api'),
+    path('formulario/api', views.formulario_api, name='formulario_api')
 
 
 ]
