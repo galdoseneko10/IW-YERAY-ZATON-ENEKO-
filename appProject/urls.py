@@ -23,7 +23,8 @@ urlpatterns = [
     path('pedidos/delete/<int:pedido_id>/', views.delete_pedido, name='pedido_delete'),
     path('pedidos/edit/<int:pedido_id>/', views.edit_pedido, name='pedido_edit'),
     path('', views.paginaprincipal, name='pagprincipal'),
-    path('pedidos/api', views.pedidos_api, name='pedidos_api')
+    path('pedidos/api', views.pedidos_api, name='pedidos_api'),
+    path('componentes/borrar/api', views.borrar_api, name='pedidos_api'),
 
 
 ]

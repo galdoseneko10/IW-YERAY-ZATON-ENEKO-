@@ -6,6 +6,8 @@ from django.template.loader import get_template
 from django.core.mail import EmailMultiAlternatives
 from django.conf import settings
 from django.http import JsonResponse
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_exempt
 
 from appProject.models import Producto, Cliente, Componente
 from appProject.models import Pedido
@@ -320,3 +322,11 @@ def pedidos_api(request):
         'pedidos': list(Pedido.objects.all().values()),
     }
     return JsonResponse(context)
+
+
+@method_decorator(csrf_exempt, name='dispatch')
+def borrar_api (req):
+    componente=Componente.objects.get(pk=req.POST["componente"])
+    componente.delete()
+    return HttpResponse("ok")
+
