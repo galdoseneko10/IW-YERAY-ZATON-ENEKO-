@@ -5,6 +5,7 @@ from django.views.generic import ListView, DetailView
 from django.template.loader import get_template
 from django.core.mail import EmailMultiAlternatives
 from django.conf import settings
+from django.http import JsonResponse
 
 from appProject.models import Producto, Cliente, Componente
 from appProject.models import Pedido
@@ -311,3 +312,11 @@ def paginaprincipal(request):
         send_email(mail, nombre)
 
     return render(request, 'paginaprincipal.html')
+
+
+def pedidos_api(request):
+
+    context = {
+        'pedidos': list(Pedido.objects.all().values()),
+    }
+    return JsonResponse(context)
