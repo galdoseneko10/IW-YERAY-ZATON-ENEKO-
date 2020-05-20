@@ -321,7 +321,6 @@ p.side {margin-bottom: 20px;}
 	clear: both;
  	position: relative;
  	z-index: 10;
- 	margin-top:40px;
 }
 .footer-container2 {
 	width:100%;
@@ -427,19 +426,20 @@ a.accordion-toggle{background: #f5f5f5;}
 }
 .divpedido3{
     background-image: url("https://solmonscomputer.com/image/cache/catalog/web-banner-1-600x250-600x250.png");
-    width:43%;
+    width:49%;
     height: 250px;
     float:left;
-    margin-left:87px;
+    margin-top:10px;
 }
 .divpedido4{
-    width:43%;
+    width:36%;
     height: 270px;
     margin-right: 82px;
     opacity:0.7;
     float:right;
     text-align:center;
     color:black;
+    margin-top:10px;
 }
 .suscribirbtn{
 background-color:#2e3ce3;
