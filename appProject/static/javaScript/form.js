@@ -1,4 +1,4 @@
-var form= document.getElementById('formulario_alta') //tomar referncia del htm
+var form= document.getElementById('formulario_alta') //tomar referncia del html
 
 form.addEventListener('submit',function(e){
     e.preventDefault() //no se envia el formulario predefinido sino como queremos nosotros
@@ -15,7 +15,7 @@ form.addEventListener('submit',function(e){
       })
       .then(function (texto) {
 
-        alert('todo ok horse luis')
+        alert('¡Registrado correctamente!')
 
       })
       .catch(function (err) {
