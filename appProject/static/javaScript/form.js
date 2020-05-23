@@ -10,7 +10,7 @@ form.addEventListener('submit',function(e){
         if (response.ok) {
           return response.text();
         } else {
-          throw "Error en la llamada Ajax";
+          throw "Error en Ajax";
         }
       })
       .then(function (texto) {
@@ -19,7 +19,7 @@ form.addEventListener('submit',function(e){
 
       })
       .catch(function (err) {
-        alert("error inesperado");
+        alert("Error");
       });
 
     })

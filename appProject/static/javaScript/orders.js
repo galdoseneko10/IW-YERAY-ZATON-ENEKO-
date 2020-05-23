@@ -14,7 +14,7 @@ fetch("../pedidos/api")
     if (response.ok) {
       return response.text();
     } else {
-      throw "Error en la llamada Ajax";
+      throw "Error en Ajax";
     }
   })
   .then(function (data) {
@@ -25,7 +25,7 @@ fetch("../pedidos/api")
   })
   .catch(function (error) {
     console.log(error)
-    alert("Error inesperado");
+    alert("Error");
   });
 
 function template_catalogo(ped) {
