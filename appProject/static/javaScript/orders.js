@@ -36,8 +36,6 @@ function template_catalogo(ped) {
             <br>
             <li> FECHA: ${ ped.fecha } </li>
             <br>
-            <li> CLIENTE: ${ ped.datos_cliente }</li>
-            <br>
         </ul>
 
         <br>
